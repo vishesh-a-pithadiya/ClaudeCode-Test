@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 
 function Home() {
   const [designOpen, setDesignOpen] = useState(false);
   const [supportOpen, setSupportOpen] = useState(false);
+  const designRef = useRef(null);
+  const supportRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (designOpen && designRef.current && !designRef.current.contains(e.target)) {
+        setDesignOpen(false);
+      }
+      if (supportOpen && supportRef.current && !supportRef.current.contains(e.target)) {
+        setSupportOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [designOpen, supportOpen]);
 
   return (
     <div className="home">
@@ -37,7 +52,7 @@ function Home() {
             <h3>Products</h3>
           </div>
         </a>
-        <div className="home-section design-section" onClick={() => setDesignOpen(!designOpen)} style={{ cursor: 'pointer' }}>
+        <div ref={designRef} className="home-section design-section" onClick={() => setDesignOpen(!designOpen)} style={{ cursor: 'pointer' }}>
           {!designOpen ? (
             <>
               <div className="section-icon">
@@ -66,7 +81,7 @@ function Home() {
             </div>
           )}
         </div>
-        <div className="home-section support-section" onClick={() => setSupportOpen(!supportOpen)} style={{ cursor: 'pointer' }}>
+        <div ref={supportRef} className="home-section support-section" onClick={() => setSupportOpen(!supportOpen)} style={{ cursor: 'pointer' }}>
           {!supportOpen ? (
             <>
               <div className="section-icon">

@@ -90,23 +90,25 @@
 .design-expanded {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
   width: 100%;
 }
 
 .design-option {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   text-decoration: none;
   color: var(--ti-gray-800);
-  padding: 0.6rem 0.8rem;
-  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
   transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   background: var(--ti-gray-100);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  min-height: 48px;
+  cursor: pointer;
 }
 
 .design-option:hover {
@@ -115,8 +117,12 @@
   box-shadow: 0 2px 8px rgba(204, 0, 0, 0.1);
 }
 
+.design-option:active {
+  transform: scale(0.97);
+}
+
 .design-option-svg {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
 }
