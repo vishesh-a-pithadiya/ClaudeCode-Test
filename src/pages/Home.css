@@ -1,46 +1,77 @@
 .home {
   text-align: center;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
+}
+
+.hero {
+  padding: 1.2rem 0 0.8rem;
 }
 
 .home h1 {
-  font-size: 2.5rem;
-  color: #cc0000;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: var(--ti-black);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.home h1 .highlight {
+  color: var(--ti-red);
 }
 
 .home-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 3rem;
+  font-size: 0.85rem;
+  color: var(--ti-gray-500);
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 
-.home-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+.home-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+.home-section {
+  background: var(--ti-white);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--ti-red);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+.home-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.1);
 }
 
-.card h3 {
-  color: #cc0000;
-  margin-bottom: 0.75rem;
-  font-size: 1.3rem;
+.section-icon {
+  font-size: 1.6rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ti-red-bg);
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
-.card p {
-  color: #555;
-  line-height: 1.6;
+.section-text h3 {
+  color: var(--ti-black);
+  margin-bottom: 0.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.section-text p {
+  color: var(--ti-gray-600);
+  line-height: 1.4;
+  font-size: 0.8rem;
 }

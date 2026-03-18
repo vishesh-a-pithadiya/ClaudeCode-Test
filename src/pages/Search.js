@@ -42,7 +42,7 @@ function Search() {
             </a>
           </li>
           <li>
-            <a href="https://www.ti.com/design-resources.html" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.ti.com/reference-designs/index.html" target="_blank" rel="noopener noreferrer">
               Design Resources
             </a>
           </li>

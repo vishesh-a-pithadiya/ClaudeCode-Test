@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ti-app",
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["/Users/vishesh/Desktop/E2E/.claude/worktrees/goofy-lamarr/node_modules/.bin/react-scripts", "start"],
+      "port": 3000,
+      "env": {
+        "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin",
+        "BROWSER": "none"
+      }
+    }
+  ]
+}

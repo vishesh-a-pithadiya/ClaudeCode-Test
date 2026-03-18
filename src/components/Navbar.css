@@ -1,38 +1,72 @@
 .navbar {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--ti-red) 0%, var(--ti-red-dark) 100%);
+  color: var(--ti-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-top {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #cc0000;
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin-bottom: 0.4rem;
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.navbar-logo {
+  height: 30px;
+  filter: brightness(0) invert(1);
 }
 
 .navbar-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .navbar-links a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .navbar-links a:hover {
+  color: var(--ti-white);
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .navbar-links a.active {
-  background-color: rgba(255, 255, 255, 0.3);
+  color: var(--ti-red);
+  background-color: var(--ti-white);
+  font-weight: 600;
+}
+
+.navbar-login {
+  padding: 0.25rem 0.9rem;
+  background-color: transparent;
+  color: var(--ti-white);
+  border: 1.5px solid var(--ti-white);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.navbar-login:hover {
+  background-color: var(--ti-white);
+  color: var(--ti-red);
+  transform: scale(1.05);
 }
