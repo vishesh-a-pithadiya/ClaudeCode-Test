@@ -1,0 +1,250 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 120px);
+  padding: 1rem 0;
+}
+
+.login-card {
+  background: var(--ti-white);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 1.2rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  height: 36px;
+  margin-bottom: 0.8rem;
+}
+
+.login-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ti-black);
+  margin-bottom: 1.2rem;
+}
+
+.login-step {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ti-gray-700);
+  margin-bottom: 0.3rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid var(--ti-gray-300);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--ti-black);
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.login-input:focus {
+  border-color: var(--ti-red);
+}
+
+.login-input::placeholder {
+  color: var(--ti-gray-400);
+}
+
+.login-hint {
+  font-size: 0.65rem;
+  color: var(--ti-gray-500);
+  margin-top: 0.25rem;
+  margin-bottom: 0.1rem;
+}
+
+.login-error {
+  font-size: 0.7rem;
+  color: var(--ti-red);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.8rem;
+  background: var(--ti-red);
+  color: var(--ti-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: var(--ti-red-dark);
+}
+
+.login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--ti-red);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.login-link-inline {
+  color: var(--ti-red);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link-inline:hover {
+  text-decoration: underline;
+}
+
+.login-divider {
+  height: 1px;
+  background: var(--ti-gray-200);
+  margin: 1rem 0;
+}
+
+.login-register {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--ti-gray-600);
+}
+
+.login-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ti-gray-100);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.login-account-email {
+  font-size: 0.8rem;
+  color: var(--ti-black);
+  font-weight: 500;
+}
+
+.login-change-btn {
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-change-btn:hover {
+  text-decoration: underline;
+}
+
+.login-footer {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--ti-gray-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.login-footer-link {
+  font-size: 0.7rem;
+  color: var(--ti-red);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-footer-link:hover {
+  text-decoration: underline;
+}
+
+.login-legal {
+  font-size: 0.6rem;
+  color: var(--ti-gray-500);
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+
+.login-legal a {
+  color: var(--ti-red);
+  text-decoration: none;
+}
+
+.login-legal a:hover {
+  text-decoration: underline;
+}
+
+/* Profile view (when logged in) */
+.login-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.login-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--ti-red);
+  color: var(--ti-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.login-profile-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ti-black);
+}
+
+.login-profile-email {
+  font-size: 0.75rem;
+  color: var(--ti-gray-500);
+}
+
+.login-btn-outline {
+  background: transparent;
+  color: var(--ti-red);
+  border: 1.5px solid var(--ti-red);
+}
+
+.login-btn-outline:hover:not(:disabled) {
+  background: var(--ti-red-bg);
+}

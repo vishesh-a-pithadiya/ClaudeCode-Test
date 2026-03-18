@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* TI Logo Typography: Cinzel (closest match to the TI logo serif typeface) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
 :root {
   /* TI Brand Colors */
@@ -31,8 +32,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    sans-serif;
+  font-family: 'Cinzel', 'Times New Roman', 'Georgia', serif;
   -webkit-font-smoothing: antialiased;
   background-color: var(--ti-gray-100);
   color: var(--ti-gray-900);

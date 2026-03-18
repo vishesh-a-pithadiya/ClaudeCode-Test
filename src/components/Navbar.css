@@ -37,6 +37,31 @@
   transform: scale(1.05);
 }
 
+.navbar-user {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ti-white);
+  color: var(--ti-red);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.navbar-user:hover .navbar-avatar {
+  transform: scale(1.1);
+}
+
 /* Bottom tab bar - iOS Health app style */
 .tab-bar {
   position: fixed;

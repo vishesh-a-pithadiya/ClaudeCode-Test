@@ -1,15 +1,27 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../auth';
 import './Navbar.css';
 
 function Navbar() {
+  const navigate = useNavigate();
+  const { isAuthenticated, user } = useAuth();
+
   return (
     <>
       <nav className="navbar-header">
         <div className="navbar-brand">
           <img src="/ti-logo.svg" alt="Texas Instruments" className="navbar-logo" />
         </div>
-        <button className="navbar-login">Login</button>
+        {isAuthenticated ? (
+          <button className="navbar-user" onClick={() => navigate('/login')}>
+            <span className="navbar-avatar">
+              {(user.name || user.email || '?')[0].toUpperCase()}
+            </span>
+          </button>
+        ) : (
+          <button className="navbar-login" onClick={() => navigate('/login')}>Login</button>
+        )}
       </nav>
       <nav className="tab-bar">
         <NavLink to="/" end className="tab-item">
@@ -18,12 +30,6 @@ function Navbar() {
             <polyline points="9 22 9 12 15 12 15 22" />
           </svg>
           <span className="tab-label">Home</span>
-        </NavLink>
-        <NavLink to="/e2e" className="tab-item">
-          <svg className="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
-          <span className="tab-label">E2E</span>
         </NavLink>
         <NavLink to="/search" className="tab-item">
           <svg className="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
