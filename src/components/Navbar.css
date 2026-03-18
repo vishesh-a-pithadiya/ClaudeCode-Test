@@ -1,19 +1,12 @@
-.navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--ti-red) 0%, var(--ti-red-dark) 100%);
-  color: var(--ti-white);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-top {
+/* Top header bar */
+.navbar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: 0.4rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--ti-red) 0%, var(--ti-red-dark) 100%);
+  color: var(--ti-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
@@ -23,33 +16,6 @@
 .navbar-logo {
   height: 30px;
   filter: brightness(0) invert(1);
-}
-
-.navbar-links {
-  display: flex;
-  list-style: none;
-  gap: 0.5rem;
-}
-
-.navbar-links a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem;
-  padding: 0.35rem 0.9rem;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.navbar-links a:hover {
-  color: var(--ti-white);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navbar-links a.active {
-  color: var(--ti-red);
-  background-color: var(--ti-white);
-  font-weight: 600;
 }
 
 .navbar-login {
@@ -69,4 +35,63 @@
   background-color: var(--ti-white);
   color: var(--ti-red);
   transform: scale(1.05);
+}
+
+/* Bottom tab bar - iOS Health app style */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: rgba(249, 249, 249, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 0.5px solid rgba(0, 0, 0, 0.12);
+  padding: 6px 0 22px;
+  z-index: 100;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #8E8E93;
+  transition: color 0.15s ease;
+  gap: 2px;
+  padding: 2px 0;
+  min-width: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.tab-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.tab-item.active {
+  color: var(--ti-red);
+}
+
+.tab-item.active .tab-svg {
+  stroke-width: 2.2;
+}
+
+.tab-menu {
+  color: #8E8E93;
+}
+
+.tab-menu:hover {
+  color: var(--ti-red);
 }
