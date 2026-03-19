@@ -2,6 +2,7 @@
   padding: 1rem 0;
   max-width: 700px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .search h1 {
@@ -254,6 +255,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
+  max-width: 100%;
 }
 
 .browse-item {
@@ -269,6 +271,8 @@
   transition: background 0.2s ease, box-shadow 0.2s ease;
   font-size: 0.75rem;
   font-weight: 500;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .browse-item:hover {

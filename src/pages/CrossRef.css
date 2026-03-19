@@ -336,6 +336,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  max-width: 100%;
 }
 
 .crossref-mfr-chip {
