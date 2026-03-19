@@ -97,7 +97,7 @@ function Home() {
             </>
           ) : (
             <div className="design-expanded">
-              <a href="https://e2e.ti.com/" target="_blank" rel="noopener noreferrer" className="design-option" onClick={(e) => e.stopPropagation()}>
+              <div className="design-option" onClick={(e) => { e.stopPropagation(); navigate('/knowledge-bank'); }}>
                 <svg className="design-option-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="11" cy="11" r="8" />
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -105,7 +105,7 @@ function Home() {
                   <line x1="8" y1="11" x2="14" y2="11" />
                 </svg>
                 <span>Search Knowledge Bank</span>
-              </a>
+              </div>
               <a href="https://www.ti.com/customer-support/request-form?referer=E2E&si=8" target="_blank" rel="noopener noreferrer" className="design-option" onClick={(e) => e.stopPropagation()}>
                 <svg className="design-option-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 20h9" />

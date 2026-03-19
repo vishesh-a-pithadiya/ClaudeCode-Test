@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Settings from './pages/Settings';
 import Products from './pages/Products';
 import CrossRef from './pages/CrossRef';
+import KnowledgeBank from './pages/KnowledgeBank';
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
             <Route path="/products" element={<Products />} />
             <Route path="/crossref" element={<CrossRef />} />
+            <Route path="/knowledge-bank" element={<KnowledgeBank />} />
           </Routes>
         </main>
       </div>
