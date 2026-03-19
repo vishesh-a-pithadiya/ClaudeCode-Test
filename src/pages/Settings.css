@@ -1,0 +1,263 @@
+.settings {
+  padding: 0.5rem 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Profile card */
+.settings-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin: 0 0.75rem 1rem;
+  background: var(--ti-white);
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.settings-profile:active {
+  background: var(--ti-gray-100);
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ti-red) 0%, var(--ti-red-dark) 100%);
+  color: var(--ti-white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ti-black);
+}
+
+.profile-sub {
+  font-size: 0.75rem;
+  color: var(--ti-gray-500);
+  margin-top: 0.1rem;
+}
+
+.profile-chevron {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
+
+/* Sections */
+.settings-section {
+  margin-bottom: 1.25rem;
+}
+
+.settings-section-label {
+  padding: 0 1.5rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ti-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.5rem 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ti-black);
+}
+
+/* Grouped rows */
+.settings-group {
+  margin: 0 0.75rem;
+  background: var(--ti-white);
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  color: var(--ti-gray-800);
+  border-bottom: 0.5px solid var(--ti-gray-200);
+  transition: background 0.15s ease;
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+  font-size: inherit;
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-row:active {
+  background: var(--ti-gray-100);
+}
+
+/* Icon squares */
+.settings-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+.settings-label {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ti-black);
+}
+
+.settings-value {
+  font-size: 0.85rem;
+  color: var(--ti-gray-500);
+}
+
+.settings-chevron {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
+
+/* Toggle switch */
+.settings-toggle {
+  position: relative;
+  width: 51px;
+  height: 31px;
+  border-radius: 16px;
+  background: #e9e9ea;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.settings-toggle.active {
+  background: #34C759;
+}
+
+.toggle-knob {
+  display: block;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.settings-toggle.active .toggle-knob {
+  transform: translateX(20px);
+}
+
+/* Font size slider */
+.settings-font-row {
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem !important;
+}
+
+.font-size-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.font-size-label-small {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ti-gray-500);
+  flex-shrink: 0;
+}
+
+.font-size-label-large {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ti-gray-500);
+  flex-shrink: 0;
+}
+
+.font-size-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ti-gray-200);
+  outline: none;
+}
+
+.font-size-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ti-white);
+  border: 0.5px solid var(--ti-gray-300);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.font-size-ticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.2rem;
+}
+
+.font-size-tick {
+  background: none;
+  border: none;
+  font-size: 0.6rem;
+  color: var(--ti-gray-400);
+  cursor: pointer;
+  padding: 0.15rem 0.3rem;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.font-size-tick.active {
+  color: var(--ti-red);
+  font-weight: 600;
+}
+
+/* Logout */
+.settings-logout {
+  justify-content: center;
+}
+
+.settings-logout .settings-label {
+  flex: none;
+  color: var(--ti-red);
+  font-weight: 500;
+  text-align: center;
+}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
   const [designOpen, setDesignOpen] = useState(false);
   const [supportOpen, setSupportOpen] = useState(false);
+  const navigate = useNavigate();
   const designRef = useRef(null);
   const supportRef = useRef(null);
 
@@ -29,7 +31,7 @@ function Home() {
         </p>
       </div>
       <div className="home-sections">
-        <a href="https://www.ti.com" target="_blank" rel="noopener noreferrer" className="home-section">
+        <div className="home-section" onClick={() => navigate('/products')} style={{ cursor: 'pointer' }}>
           <div className="section-icon">
             <svg className="section-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -49,9 +51,9 @@ function Home() {
             </svg>
           </div>
           <div className="section-text">
-            <h3>Products</h3>
+            <h3>TI Products</h3>
           </div>
-        </a>
+        </div>
         <div ref={designRef} className="home-section design-section" onClick={() => setDesignOpen(!designOpen)} style={{ cursor: 'pointer' }}>
           {!designOpen ? (
             <>

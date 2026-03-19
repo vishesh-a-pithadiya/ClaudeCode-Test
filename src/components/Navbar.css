@@ -113,10 +113,3 @@
   stroke-width: 2.2;
 }
 
-.tab-menu {
-  color: #8E8E93;
-}
-
-.tab-menu:hover {
-  color: var(--ti-red);
-}

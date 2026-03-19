@@ -25,6 +25,27 @@
   --ti-white: #FFFFFF;
 }
 
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --ti-black: #F5F5F5;
+  --ti-gray-900: #F5F5F5;
+  --ti-gray-800: #E0E0E0;
+  --ti-gray-700: #CCCCCC;
+  --ti-gray-600: #AAAAAA;
+  --ti-gray-500: #888888;
+  --ti-gray-400: #666666;
+  --ti-gray-300: #444444;
+  --ti-gray-200: #333333;
+  --ti-gray-100: #1C1C1E;
+  --ti-gray-50: #1A1A1A;
+  --ti-red-bg: #2A1010;
+  --ti-white: #2C2C2E;
+}
+
+[data-theme="dark"] body {
+  background-color: #000000;
+}
+
 * {
   margin: 0;
   padding: 0;

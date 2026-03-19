@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import E2E from './pages/E2E';
 import Search from './pages/Search';
 import Login from './pages/Login';
+import Settings from './pages/Settings';
+import Products from './pages/Products';
 import './App.css';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/login" element={<Login />} />
             <Route path="/oauth/callback" element={<Login />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
         </main>
       </div>

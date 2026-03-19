@@ -1,0 +1,165 @@
+.products-page {
+  padding: 1rem 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.products-page h1 {
+  font-size: 1.4rem;
+  color: var(--ti-black);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Breadcrumb */
+.products-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.4rem 0;
+  margin-bottom: 0.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.products-breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumb-item {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  color: var(--ti-red);
+  cursor: pointer;
+  padding: 0.2rem 0.1rem;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.breadcrumb-item.active {
+  color: var(--ti-black);
+  font-weight: 600;
+  cursor: default;
+}
+
+.breadcrumb-sep {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
+
+/* Level indicator */
+.products-level {
+  font-size: 0.7rem;
+  color: var(--ti-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Back button */
+.products-back {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.15s;
+}
+
+.products-back:active {
+  opacity: 0.6;
+}
+
+/* Tree list */
+.products-tree-list {
+  background: var(--ti-white);
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.product-tree-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 0.5px solid var(--ti-gray-200);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.product-tree-item:last-child {
+  border-bottom: none;
+}
+
+.product-tree-item:active {
+  background: var(--ti-gray-100);
+}
+
+.product-tree-item-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ti-black);
+}
+
+.product-tree-item-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-tree-item-count {
+  font-size: 0.65rem;
+  color: var(--ti-gray-500);
+  background: var(--ti-gray-100);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+}
+
+.product-tree-chevron {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
+
+/* Sub-systems (final level - links to TI.com) */
+.product-tree-subsystem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--ti-black);
+  border-bottom: 0.5px solid var(--ti-gray-200);
+  transition: background 0.15s ease;
+}
+
+.product-tree-subsystem:last-child {
+  border-bottom: none;
+}
+
+.product-tree-subsystem:active {
+  background: var(--ti-gray-100);
+}
+
+.product-tree-subsystem-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.product-tree-external {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
