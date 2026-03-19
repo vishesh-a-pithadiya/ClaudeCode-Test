@@ -224,6 +224,19 @@
   color: var(--ti-gray-500);
 }
 
+.crossref-ti-part-price {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a8a3f;
+  margin-top: 0.15rem;
+}
+
+.crossref-price-qty {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--ti-gray-500);
+}
+
 .crossref-ti-part-action {
   display: flex;
   align-items: center;

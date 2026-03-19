@@ -2,102 +2,103 @@ import React, { useState, useRef, useEffect } from 'react';
 import './CrossRef.css';
 
 // Cross-reference database: competitor part → TI equivalent(s)
-// Each entry: { competitor, manufacturer, tiParts: [{ part, description, url }] }
+// Each entry: { competitor, manufacturer, tiParts: [{ part, description, url, price1k }] }
+// price1k = approximate USD price per unit at 1,000-unit quantity
 const CROSSREF_DB = [
   // --- Analog Devices (ADI) ---
-  { competitor: 'AD8221', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'INA128', description: 'Precision, Low-Power Instrumentation Amplifier', url: 'https://www.ti.com/product/INA128' }] },
-  { competitor: 'AD620', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'INA118', description: 'Precision, Low-Power Instrumentation Amplifier', url: 'https://www.ti.com/product/INA118' }] },
-  { competitor: 'AD8605', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'OPA340', description: 'Single, Low-Power, Rail-to-Rail Op Amp', url: 'https://www.ti.com/product/OPA340' }] },
-  { competitor: 'AD8628', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'OPA335', description: 'Zero-Drift, Single-Supply Op Amp', url: 'https://www.ti.com/product/OPA335' }] },
-  { competitor: 'AD7124', manufacturer: 'Analog Devices', category: 'Data Converters', tiParts: [{ part: 'ADS1248', description: '24-Bit, 2kSPS Delta-Sigma ADC', url: 'https://www.ti.com/product/ADS1248' }] },
-  { competitor: 'AD7606', manufacturer: 'Analog Devices', category: 'Data Converters', tiParts: [{ part: 'ADS8688', description: '16-Bit, 500kSPS, 8-Channel SAR ADC', url: 'https://www.ti.com/product/ADS8688' }] },
-  { competitor: 'AD5689', manufacturer: 'Analog Devices', category: 'Data Converters', tiParts: [{ part: 'DAC8562', description: '16-Bit, Dual, Low-Power DAC', url: 'https://www.ti.com/product/DAC8562' }] },
-  { competitor: 'AD9361', manufacturer: 'Analog Devices', category: 'RF & Wireless', tiParts: [{ part: 'AFE7769', description: 'Quad-Channel RF Transceiver', url: 'https://www.ti.com/product/AFE7769' }] },
-  { competitor: 'ADP2303', manufacturer: 'Analog Devices', category: 'Power Management', tiParts: [{ part: 'TPS54302', description: '3A, 28V, Step-Down Converter', url: 'https://www.ti.com/product/TPS54302' }] },
-  { competitor: 'ADP1720', manufacturer: 'Analog Devices', category: 'Power Management', tiParts: [{ part: 'TPS7A20', description: '250mA, Low-Noise LDO Regulator', url: 'https://www.ti.com/product/TPS7A20' }] },
-  { competitor: 'ADXL345', manufacturer: 'Analog Devices', category: 'Sensors', tiParts: [{ part: 'ADXL345-ALT', description: 'See TI mmWave sensors for motion detection', url: 'https://www.ti.com/sensors/overview.html' }] },
-  { competitor: 'ADG1608', manufacturer: 'Analog Devices', category: 'Switches & Mux', tiParts: [{ part: 'MUX36S08', description: '36V, Low-Capacitance 8:1 Mux', url: 'https://www.ti.com/product/MUX36S08' }] },
-  { competitor: 'AD8418', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'INA240', description: 'High-Side, Bidirectional Current Sense Amp', url: 'https://www.ti.com/product/INA240' }] },
+  { competitor: 'AD8221', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'INA128', description: 'Precision, Low-Power Instrumentation Amplifier', url: 'https://www.ti.com/product/INA128', price1k: 3.52 }] },
+  { competitor: 'AD620', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'INA118', description: 'Precision, Low-Power Instrumentation Amplifier', url: 'https://www.ti.com/product/INA118', price1k: 3.15 }] },
+  { competitor: 'AD8605', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'OPA340', description: 'Single, Low-Power, Rail-to-Rail Op Amp', url: 'https://www.ti.com/product/OPA340', price1k: 1.10 }] },
+  { competitor: 'AD8628', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'OPA335', description: 'Zero-Drift, Single-Supply Op Amp', url: 'https://www.ti.com/product/OPA335', price1k: 1.45 }] },
+  { competitor: 'AD7124', manufacturer: 'Analog Devices', category: 'Data Converters', tiParts: [{ part: 'ADS1248', description: '24-Bit, 2kSPS Delta-Sigma ADC', url: 'https://www.ti.com/product/ADS1248', price1k: 5.95 }] },
+  { competitor: 'AD7606', manufacturer: 'Analog Devices', category: 'Data Converters', tiParts: [{ part: 'ADS8688', description: '16-Bit, 500kSPS, 8-Channel SAR ADC', url: 'https://www.ti.com/product/ADS8688', price1k: 8.50 }] },
+  { competitor: 'AD5689', manufacturer: 'Analog Devices', category: 'Data Converters', tiParts: [{ part: 'DAC8562', description: '16-Bit, Dual, Low-Power DAC', url: 'https://www.ti.com/product/DAC8562', price1k: 4.25 }] },
+  { competitor: 'AD9361', manufacturer: 'Analog Devices', category: 'RF & Wireless', tiParts: [{ part: 'AFE7769', description: 'Quad-Channel RF Transceiver', url: 'https://www.ti.com/product/AFE7769', price1k: 42.00 }] },
+  { competitor: 'ADP2303', manufacturer: 'Analog Devices', category: 'Power Management', tiParts: [{ part: 'TPS54302', description: '3A, 28V, Step-Down Converter', url: 'https://www.ti.com/product/TPS54302', price1k: 0.73 }] },
+  { competitor: 'ADP1720', manufacturer: 'Analog Devices', category: 'Power Management', tiParts: [{ part: 'TPS7A20', description: '250mA, Low-Noise LDO Regulator', url: 'https://www.ti.com/product/TPS7A20', price1k: 0.35 }] },
+  { competitor: 'ADXL345', manufacturer: 'Analog Devices', category: 'Sensors', tiParts: [{ part: 'ADXL345-ALT', description: 'See TI mmWave sensors for motion detection', url: 'https://www.ti.com/sensors/overview.html', price1k: null }] },
+  { competitor: 'ADG1608', manufacturer: 'Analog Devices', category: 'Switches & Mux', tiParts: [{ part: 'MUX36S08', description: '36V, Low-Capacitance 8:1 Mux', url: 'https://www.ti.com/product/MUX36S08', price1k: 1.85 }] },
+  { competitor: 'AD8418', manufacturer: 'Analog Devices', category: 'Amplifiers', tiParts: [{ part: 'INA240', description: 'High-Side, Bidirectional Current Sense Amp', url: 'https://www.ti.com/product/INA240', price1k: 1.20 }] },
 
   // --- Microchip / Atmel ---
-  { competitor: 'ATmega328P', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'MSP430FR2355', description: '16-Bit, FRAM MCU with ADC', url: 'https://www.ti.com/product/MSP430FR2355' }] },
-  { competitor: 'ATmega2560', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'MSP430FR5994', description: '16-Bit, Ultra-Low-Power FRAM MCU', url: 'https://www.ti.com/product/MSP430FR5994' }] },
-  { competitor: 'ATSAMD21', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'CC2340', description: 'SimpleLink Arm Cortex-M0+ BLE MCU', url: 'https://www.ti.com/product/CC2340R5' }] },
-  { competitor: 'PIC16F877A', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'MSP430G2553', description: '16-Bit, Mixed-Signal MCU', url: 'https://www.ti.com/product/MSP430G2553' }] },
-  { competitor: 'PIC32MX', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'TM4C123GH6PM', description: '32-Bit ARM Cortex-M4F MCU', url: 'https://www.ti.com/product/TM4C123GH6PM' }] },
-  { competitor: 'MCP2515', manufacturer: 'Microchip', category: 'Interface', tiParts: [{ part: 'TCAN4550', description: 'CAN FD Controller with Transceiver', url: 'https://www.ti.com/product/TCAN4550' }] },
-  { competitor: 'MCP4725', manufacturer: 'Microchip', category: 'Data Converters', tiParts: [{ part: 'DAC5311', description: '8-Bit, Single-Channel DAC', url: 'https://www.ti.com/product/DAC5311' }] },
-  { competitor: 'MCP3008', manufacturer: 'Microchip', category: 'Data Converters', tiParts: [{ part: 'ADS7828', description: '12-Bit, 8-Channel ADC', url: 'https://www.ti.com/product/ADS7828' }] },
+  { competitor: 'ATmega328P', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'MSP430FR2355', description: '16-Bit, FRAM MCU with ADC', url: 'https://www.ti.com/product/MSP430FR2355', price1k: 1.60 }] },
+  { competitor: 'ATmega2560', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'MSP430FR5994', description: '16-Bit, Ultra-Low-Power FRAM MCU', url: 'https://www.ti.com/product/MSP430FR5994', price1k: 3.20 }] },
+  { competitor: 'ATSAMD21', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'CC2340', description: 'SimpleLink Arm Cortex-M0+ BLE MCU', url: 'https://www.ti.com/product/CC2340R5', price1k: 1.45 }] },
+  { competitor: 'PIC16F877A', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'MSP430G2553', description: '16-Bit, Mixed-Signal MCU', url: 'https://www.ti.com/product/MSP430G2553', price1k: 1.05 }] },
+  { competitor: 'PIC32MX', manufacturer: 'Microchip', category: 'MCU', tiParts: [{ part: 'TM4C123GH6PM', description: '32-Bit ARM Cortex-M4F MCU', url: 'https://www.ti.com/product/TM4C123GH6PM', price1k: 5.50 }] },
+  { competitor: 'MCP2515', manufacturer: 'Microchip', category: 'Interface', tiParts: [{ part: 'TCAN4550', description: 'CAN FD Controller with Transceiver', url: 'https://www.ti.com/product/TCAN4550', price1k: 2.85 }] },
+  { competitor: 'MCP4725', manufacturer: 'Microchip', category: 'Data Converters', tiParts: [{ part: 'DAC5311', description: '8-Bit, Single-Channel DAC', url: 'https://www.ti.com/product/DAC5311', price1k: 0.55 }] },
+  { competitor: 'MCP3008', manufacturer: 'Microchip', category: 'Data Converters', tiParts: [{ part: 'ADS7828', description: '12-Bit, 8-Channel ADC', url: 'https://www.ti.com/product/ADS7828', price1k: 2.40 }] },
 
   // --- STMicroelectronics ---
-  { competitor: 'STM32F103', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'TM4C1294NCPDT', description: '32-Bit ARM Cortex-M4F Connected MCU', url: 'https://www.ti.com/product/TM4C1294NCPDT' }] },
-  { competitor: 'STM32F407', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'AM2434', description: 'Sitara ARM Cortex-R5F Processor', url: 'https://www.ti.com/product/AM2434' }] },
-  { competitor: 'STM32L476', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'MSP432P401R', description: '32-Bit ARM Cortex-M4F Low-Power MCU', url: 'https://www.ti.com/product/MSP432P401R' }] },
-  { competitor: 'STM32H743', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'AM6232', description: 'Sitara ARM Cortex-A53 Processor', url: 'https://www.ti.com/product/AM6232' }] },
-  { competitor: 'L298N', manufacturer: 'STMicroelectronics', category: 'Motor Drivers', tiParts: [{ part: 'DRV8871', description: '3.6A H-Bridge Motor Driver', url: 'https://www.ti.com/product/DRV8871' }] },
-  { competitor: 'L7805', manufacturer: 'STMicroelectronics', category: 'Power Management', tiParts: [{ part: 'LM340', description: '5V, 1.5A Fixed Voltage Regulator', url: 'https://www.ti.com/product/LM340' }] },
-  { competitor: 'LD1117', manufacturer: 'STMicroelectronics', category: 'Power Management', tiParts: [{ part: 'TLV1117', description: '800mA, Low-Dropout Regulator', url: 'https://www.ti.com/product/TLV1117' }] },
-  { competitor: 'VL53L0X', manufacturer: 'STMicroelectronics', category: 'Sensors', tiParts: [{ part: 'OPT3101', description: 'Time-of-Flight Sensor', url: 'https://www.ti.com/product/OPT3101' }] },
+  { competitor: 'STM32F103', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'TM4C1294NCPDT', description: '32-Bit ARM Cortex-M4F Connected MCU', url: 'https://www.ti.com/product/TM4C1294NCPDT', price1k: 9.95 }] },
+  { competitor: 'STM32F407', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'AM2434', description: 'Sitara ARM Cortex-R5F Processor', url: 'https://www.ti.com/product/AM2434', price1k: 16.50 }] },
+  { competitor: 'STM32L476', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'MSP432P401R', description: '32-Bit ARM Cortex-M4F Low-Power MCU', url: 'https://www.ti.com/product/MSP432P401R', price1k: 4.75 }] },
+  { competitor: 'STM32H743', manufacturer: 'STMicroelectronics', category: 'MCU', tiParts: [{ part: 'AM6232', description: 'Sitara ARM Cortex-A53 Processor', url: 'https://www.ti.com/product/AM6232', price1k: 12.90 }] },
+  { competitor: 'L298N', manufacturer: 'STMicroelectronics', category: 'Motor Drivers', tiParts: [{ part: 'DRV8871', description: '3.6A H-Bridge Motor Driver', url: 'https://www.ti.com/product/DRV8871', price1k: 1.15 }] },
+  { competitor: 'L7805', manufacturer: 'STMicroelectronics', category: 'Power Management', tiParts: [{ part: 'LM340', description: '5V, 1.5A Fixed Voltage Regulator', url: 'https://www.ti.com/product/LM340', price1k: 0.52 }] },
+  { competitor: 'LD1117', manufacturer: 'STMicroelectronics', category: 'Power Management', tiParts: [{ part: 'TLV1117', description: '800mA, Low-Dropout Regulator', url: 'https://www.ti.com/product/TLV1117', price1k: 0.38 }] },
+  { competitor: 'VL53L0X', manufacturer: 'STMicroelectronics', category: 'Sensors', tiParts: [{ part: 'OPT3101', description: 'Time-of-Flight Sensor', url: 'https://www.ti.com/product/OPT3101', price1k: 3.75 }] },
 
   // --- NXP ---
-  { competitor: 'LPC1768', manufacturer: 'NXP', category: 'MCU', tiParts: [{ part: 'TM4C1294NCPDT', description: '32-Bit ARM Cortex-M4F MCU with Ethernet', url: 'https://www.ti.com/product/TM4C1294NCPDT' }] },
-  { competitor: 'i.MX6', manufacturer: 'NXP', category: 'Processors', tiParts: [{ part: 'AM625', description: 'Sitara ARM Cortex-A53 Processor', url: 'https://www.ti.com/product/AM625' }] },
-  { competitor: 'i.MX8M', manufacturer: 'NXP', category: 'Processors', tiParts: [{ part: 'AM62A7', description: 'Sitara Vision Processor with AI', url: 'https://www.ti.com/product/AM62A7' }] },
-  { competitor: 'TJA1050', manufacturer: 'NXP', category: 'Interface', tiParts: [{ part: 'TCAN330', description: 'CAN Transceiver', url: 'https://www.ti.com/product/TCAN330' }] },
-  { competitor: 'PCA9685', manufacturer: 'NXP', category: 'LED Drivers', tiParts: [{ part: 'TLC5940', description: '16-Channel LED Driver with PWM', url: 'https://www.ti.com/product/TLC5940' }] },
+  { competitor: 'LPC1768', manufacturer: 'NXP', category: 'MCU', tiParts: [{ part: 'TM4C1294NCPDT', description: '32-Bit ARM Cortex-M4F MCU with Ethernet', url: 'https://www.ti.com/product/TM4C1294NCPDT', price1k: 9.95 }] },
+  { competitor: 'i.MX6', manufacturer: 'NXP', category: 'Processors', tiParts: [{ part: 'AM625', description: 'Sitara ARM Cortex-A53 Processor', url: 'https://www.ti.com/product/AM625', price1k: 9.00 }] },
+  { competitor: 'i.MX8M', manufacturer: 'NXP', category: 'Processors', tiParts: [{ part: 'AM62A7', description: 'Sitara Vision Processor with AI', url: 'https://www.ti.com/product/AM62A7', price1k: 18.00 }] },
+  { competitor: 'TJA1050', manufacturer: 'NXP', category: 'Interface', tiParts: [{ part: 'TCAN330', description: 'CAN Transceiver', url: 'https://www.ti.com/product/TCAN330', price1k: 0.65 }] },
+  { competitor: 'PCA9685', manufacturer: 'NXP', category: 'LED Drivers', tiParts: [{ part: 'TLC5940', description: '16-Channel LED Driver with PWM', url: 'https://www.ti.com/product/TLC5940', price1k: 2.10 }] },
 
   // --- Infineon / Cypress ---
-  { competitor: 'IRF540N', manufacturer: 'Infineon', category: 'Power MOSFETs', tiParts: [{ part: 'CSD19536KCS', description: '100V, N-Channel NexFET Power MOSFET', url: 'https://www.ti.com/product/CSD19536KCS' }] },
-  { competitor: 'IR2110', manufacturer: 'Infineon', category: 'Gate Drivers', tiParts: [{ part: 'UCC27211', description: '120V Half-Bridge Gate Driver', url: 'https://www.ti.com/product/UCC27211' }] },
-  { competitor: 'IR2104', manufacturer: 'Infineon', category: 'Gate Drivers', tiParts: [{ part: 'UCC27201', description: '120V Half-Bridge Gate Driver', url: 'https://www.ti.com/product/UCC27201' }] },
-  { competitor: 'IRS2092', manufacturer: 'Infineon', category: 'Audio', tiParts: [{ part: 'TPA3255', description: '315W Stereo Class-D Audio Amplifier', url: 'https://www.ti.com/product/TPA3255' }] },
-  { competitor: 'PSoC 6', manufacturer: 'Infineon', category: 'MCU', tiParts: [{ part: 'CC2652R', description: 'SimpleLink Multiprotocol Wireless MCU', url: 'https://www.ti.com/product/CC2652R' }] },
+  { competitor: 'IRF540N', manufacturer: 'Infineon', category: 'Power MOSFETs', tiParts: [{ part: 'CSD19536KCS', description: '100V, N-Channel NexFET Power MOSFET', url: 'https://www.ti.com/product/CSD19536KCS', price1k: 0.89 }] },
+  { competitor: 'IR2110', manufacturer: 'Infineon', category: 'Gate Drivers', tiParts: [{ part: 'UCC27211', description: '120V Half-Bridge Gate Driver', url: 'https://www.ti.com/product/UCC27211', price1k: 1.55 }] },
+  { competitor: 'IR2104', manufacturer: 'Infineon', category: 'Gate Drivers', tiParts: [{ part: 'UCC27201', description: '120V Half-Bridge Gate Driver', url: 'https://www.ti.com/product/UCC27201', price1k: 1.30 }] },
+  { competitor: 'IRS2092', manufacturer: 'Infineon', category: 'Audio', tiParts: [{ part: 'TPA3255', description: '315W Stereo Class-D Audio Amplifier', url: 'https://www.ti.com/product/TPA3255', price1k: 5.25 }] },
+  { competitor: 'PSoC 6', manufacturer: 'Infineon', category: 'MCU', tiParts: [{ part: 'CC2652R', description: 'SimpleLink Multiprotocol Wireless MCU', url: 'https://www.ti.com/product/CC2652R', price1k: 3.40 }] },
 
   // --- ON Semiconductor / onsemi ---
-  { competitor: 'NCP1117', manufacturer: 'onsemi', category: 'Power Management', tiParts: [{ part: 'TLV1117', description: '800mA, Low-Dropout Regulator', url: 'https://www.ti.com/product/TLV1117' }] },
-  { competitor: 'NCV7356', manufacturer: 'onsemi', category: 'Interface', tiParts: [{ part: 'TCAN4550', description: 'CAN FD Controller with Transceiver', url: 'https://www.ti.com/product/TCAN4550' }] },
-  { competitor: 'NCS20071', manufacturer: 'onsemi', category: 'Amplifiers', tiParts: [{ part: 'TLV9001', description: 'Single, 1MHz, RRIO Op Amp', url: 'https://www.ti.com/product/TLV9001' }] },
-  { competitor: 'FAN7530', manufacturer: 'onsemi', category: 'Power Management', tiParts: [{ part: 'UCC28180', description: 'PFC Controller', url: 'https://www.ti.com/product/UCC28180' }] },
+  { competitor: 'NCP1117', manufacturer: 'onsemi', category: 'Power Management', tiParts: [{ part: 'TLV1117', description: '800mA, Low-Dropout Regulator', url: 'https://www.ti.com/product/TLV1117', price1k: 0.38 }] },
+  { competitor: 'NCV7356', manufacturer: 'onsemi', category: 'Interface', tiParts: [{ part: 'TCAN4550', description: 'CAN FD Controller with Transceiver', url: 'https://www.ti.com/product/TCAN4550', price1k: 2.85 }] },
+  { competitor: 'NCS20071', manufacturer: 'onsemi', category: 'Amplifiers', tiParts: [{ part: 'TLV9001', description: 'Single, 1MHz, RRIO Op Amp', url: 'https://www.ti.com/product/TLV9001', price1k: 0.25 }] },
+  { competitor: 'FAN7530', manufacturer: 'onsemi', category: 'Power Management', tiParts: [{ part: 'UCC28180', description: 'PFC Controller', url: 'https://www.ti.com/product/UCC28180', price1k: 1.60 }] },
 
   // --- Maxim (now part of ADI) ---
-  { competitor: 'MAX232', manufacturer: 'Maxim', category: 'Interface', tiParts: [{ part: 'MAX232', description: 'Dual RS-232 Driver/Receiver', url: 'https://www.ti.com/product/MAX232' }] },
-  { competitor: 'MAX485', manufacturer: 'Maxim', category: 'Interface', tiParts: [{ part: 'SN65HVD72', description: 'RS-485 Transceiver', url: 'https://www.ti.com/product/SN65HVD72' }] },
-  { competitor: 'MAX6675', manufacturer: 'Maxim', category: 'Data Converters', tiParts: [{ part: 'ADS1118', description: '16-Bit ADC with Thermocouple Support', url: 'https://www.ti.com/product/ADS1118' }] },
-  { competitor: 'DS18B20', manufacturer: 'Maxim', category: 'Sensors', tiParts: [{ part: 'TMP117', description: 'High-Accuracy Digital Temperature Sensor', url: 'https://www.ti.com/product/TMP117' }] },
-  { competitor: 'MAX17048', manufacturer: 'Maxim', category: 'Power Management', tiParts: [{ part: 'BQ27441', description: 'Battery Fuel Gauge', url: 'https://www.ti.com/product/BQ27441-G1' }] },
+  { competitor: 'MAX232', manufacturer: 'Maxim', category: 'Interface', tiParts: [{ part: 'MAX232', description: 'Dual RS-232 Driver/Receiver', url: 'https://www.ti.com/product/MAX232', price1k: 0.95 }] },
+  { competitor: 'MAX485', manufacturer: 'Maxim', category: 'Interface', tiParts: [{ part: 'SN65HVD72', description: 'RS-485 Transceiver', url: 'https://www.ti.com/product/SN65HVD72', price1k: 1.10 }] },
+  { competitor: 'MAX6675', manufacturer: 'Maxim', category: 'Data Converters', tiParts: [{ part: 'ADS1118', description: '16-Bit ADC with Thermocouple Support', url: 'https://www.ti.com/product/ADS1118', price1k: 3.50 }] },
+  { competitor: 'DS18B20', manufacturer: 'Maxim', category: 'Sensors', tiParts: [{ part: 'TMP117', description: 'High-Accuracy Digital Temperature Sensor', url: 'https://www.ti.com/product/TMP117', price1k: 1.85 }] },
+  { competitor: 'MAX17048', manufacturer: 'Maxim', category: 'Power Management', tiParts: [{ part: 'BQ27441', description: 'Battery Fuel Gauge', url: 'https://www.ti.com/product/BQ27441-G1', price1k: 1.95 }] },
 
   // --- Renesas ---
-  { competitor: 'ISL8117', manufacturer: 'Renesas', category: 'Power Management', tiParts: [{ part: 'TPS54560', description: '5A, 60V Step-Down Converter', url: 'https://www.ti.com/product/TPS54560' }] },
-  { competitor: 'RX65N', manufacturer: 'Renesas', category: 'MCU', tiParts: [{ part: 'TM4C1294NCPDT', description: '32-Bit ARM Cortex-M4F MCU', url: 'https://www.ti.com/product/TM4C1294NCPDT' }] },
-  { competitor: 'RA6M4', manufacturer: 'Renesas', category: 'MCU', tiParts: [{ part: 'MSPM0G3507', description: 'Arm Cortex-M0+ MCU', url: 'https://www.ti.com/product/MSPM0G3507' }] },
+  { competitor: 'ISL8117', manufacturer: 'Renesas', category: 'Power Management', tiParts: [{ part: 'TPS54560', description: '5A, 60V Step-Down Converter', url: 'https://www.ti.com/product/TPS54560', price1k: 2.10 }] },
+  { competitor: 'RX65N', manufacturer: 'Renesas', category: 'MCU', tiParts: [{ part: 'TM4C1294NCPDT', description: '32-Bit ARM Cortex-M4F MCU', url: 'https://www.ti.com/product/TM4C1294NCPDT', price1k: 9.95 }] },
+  { competitor: 'RA6M4', manufacturer: 'Renesas', category: 'MCU', tiParts: [{ part: 'MSPM0G3507', description: 'Arm Cortex-M0+ MCU', url: 'https://www.ti.com/product/MSPM0G3507', price1k: 1.10 }] },
 
   // --- Qualcomm ---
-  { competitor: 'QCA7000', manufacturer: 'Qualcomm', category: 'Communication', tiParts: [{ part: 'DP83867', description: 'Gigabit Ethernet PHY', url: 'https://www.ti.com/product/DP83867' }] },
+  { competitor: 'QCA7000', manufacturer: 'Qualcomm', category: 'Communication', tiParts: [{ part: 'DP83867', description: 'Gigabit Ethernet PHY', url: 'https://www.ti.com/product/DP83867', price1k: 2.75 }] },
 
   // --- FTDI ---
-  { competitor: 'FT232R', manufacturer: 'FTDI', category: 'Interface', tiParts: [{ part: 'TUSB3410', description: 'USB to UART Bridge Controller', url: 'https://www.ti.com/product/TUSB3410' }] },
-  { competitor: 'FT2232H', manufacturer: 'FTDI', category: 'Interface', tiParts: [{ part: 'TUSB8041', description: 'USB Hub Controller', url: 'https://www.ti.com/product/TUSB8041' }] },
+  { competitor: 'FT232R', manufacturer: 'FTDI', category: 'Interface', tiParts: [{ part: 'TUSB3410', description: 'USB to UART Bridge Controller', url: 'https://www.ti.com/product/TUSB3410', price1k: 2.30 }] },
+  { competitor: 'FT2232H', manufacturer: 'FTDI', category: 'Interface', tiParts: [{ part: 'TUSB8041', description: 'USB Hub Controller', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
 
   // --- Silicon Labs ---
-  { competitor: 'CP2102', manufacturer: 'Silicon Labs', category: 'Interface', tiParts: [{ part: 'TUSB3410', description: 'USB to UART Bridge', url: 'https://www.ti.com/product/TUSB3410' }] },
-  { competitor: 'EFM32', manufacturer: 'Silicon Labs', category: 'MCU', tiParts: [{ part: 'MSP430FR5969', description: '16-Bit, Ultra-Low-Power FRAM MCU', url: 'https://www.ti.com/product/MSP430FR5969' }] },
-  { competitor: 'Si7021', manufacturer: 'Silicon Labs', category: 'Sensors', tiParts: [{ part: 'HDC2080', description: 'Low-Power Humidity & Temperature Sensor', url: 'https://www.ti.com/product/HDC2080' }] },
+  { competitor: 'CP2102', manufacturer: 'Silicon Labs', category: 'Interface', tiParts: [{ part: 'TUSB3410', description: 'USB to UART Bridge', url: 'https://www.ti.com/product/TUSB3410', price1k: 2.30 }] },
+  { competitor: 'EFM32', manufacturer: 'Silicon Labs', category: 'MCU', tiParts: [{ part: 'MSP430FR5969', description: '16-Bit, Ultra-Low-Power FRAM MCU', url: 'https://www.ti.com/product/MSP430FR5969', price1k: 2.50 }] },
+  { competitor: 'Si7021', manufacturer: 'Silicon Labs', category: 'Sensors', tiParts: [{ part: 'HDC2080', description: 'Low-Power Humidity & Temperature Sensor', url: 'https://www.ti.com/product/HDC2080', price1k: 1.40 }] },
 
   // --- Vishay ---
-  { competitor: 'TCPT1300', manufacturer: 'Vishay', category: 'Sensors', tiParts: [{ part: 'OPT3002', description: 'Light-to-Digital Sensor', url: 'https://www.ti.com/product/OPT3002' }] },
+  { competitor: 'TCPT1300', manufacturer: 'Vishay', category: 'Sensors', tiParts: [{ part: 'OPT3002', description: 'Light-to-Digital Sensor', url: 'https://www.ti.com/product/OPT3002', price1k: 0.95 }] },
 
   // --- Bosch ---
-  { competitor: 'BMP280', manufacturer: 'Bosch', category: 'Sensors', tiParts: [{ part: 'DRV5032', description: 'Ultra-Low-Power Hall Effect Sensor', url: 'https://www.ti.com/product/DRV5032' }] },
-  { competitor: 'BME280', manufacturer: 'Bosch', category: 'Sensors', tiParts: [{ part: 'HDC2080', description: 'Humidity & Temperature Sensor', url: 'https://www.ti.com/product/HDC2080' }] },
+  { competitor: 'BMP280', manufacturer: 'Bosch', category: 'Sensors', tiParts: [{ part: 'DRV5032', description: 'Ultra-Low-Power Hall Effect Sensor', url: 'https://www.ti.com/product/DRV5032', price1k: 0.45 }] },
+  { competitor: 'BME280', manufacturer: 'Bosch', category: 'Sensors', tiParts: [{ part: 'HDC2080', description: 'Humidity & Temperature Sensor', url: 'https://www.ti.com/product/HDC2080', price1k: 1.40 }] },
 
   // --- Espressif ---
-  { competitor: 'ESP32', manufacturer: 'Espressif', category: 'MCU / Wireless', tiParts: [{ part: 'CC3235S', description: 'SimpleLink Wi-Fi Dual-Band MCU', url: 'https://www.ti.com/product/CC3235S' }] },
-  { competitor: 'ESP8266', manufacturer: 'Espressif', category: 'MCU / Wireless', tiParts: [{ part: 'CC3120', description: 'SimpleLink Wi-Fi Network Processor', url: 'https://www.ti.com/product/CC3120' }] },
+  { competitor: 'ESP32', manufacturer: 'Espressif', category: 'MCU / Wireless', tiParts: [{ part: 'CC3235S', description: 'SimpleLink Wi-Fi Dual-Band MCU', url: 'https://www.ti.com/product/CC3235S', price1k: 5.90 }] },
+  { competitor: 'ESP8266', manufacturer: 'Espressif', category: 'MCU / Wireless', tiParts: [{ part: 'CC3120', description: 'SimpleLink Wi-Fi Network Processor', url: 'https://www.ti.com/product/CC3120', price1k: 4.50 }] },
 
   // --- Nordic ---
-  { competitor: 'nRF52832', manufacturer: 'Nordic', category: 'MCU / Wireless', tiParts: [{ part: 'CC2652R', description: 'SimpleLink Multiprotocol Wireless MCU', url: 'https://www.ti.com/product/CC2652R' }] },
-  { competitor: 'nRF52840', manufacturer: 'Nordic', category: 'MCU / Wireless', tiParts: [{ part: 'CC2652P', description: 'Multiprotocol Wireless MCU with PA', url: 'https://www.ti.com/product/CC2652P' }] },
-  { competitor: 'nRF5340', manufacturer: 'Nordic', category: 'MCU / Wireless', tiParts: [{ part: 'CC2674R10', description: 'Multiprotocol Wireless MCU', url: 'https://www.ti.com/product/CC2674R10' }] },
+  { competitor: 'nRF52832', manufacturer: 'Nordic', category: 'MCU / Wireless', tiParts: [{ part: 'CC2652R', description: 'SimpleLink Multiprotocol Wireless MCU', url: 'https://www.ti.com/product/CC2652R', price1k: 3.40 }] },
+  { competitor: 'nRF52840', manufacturer: 'Nordic', category: 'MCU / Wireless', tiParts: [{ part: 'CC2652P', description: 'Multiprotocol Wireless MCU with PA', url: 'https://www.ti.com/product/CC2652P', price1k: 3.95 }] },
+  { competitor: 'nRF5340', manufacturer: 'Nordic', category: 'MCU / Wireless', tiParts: [{ part: 'CC2674R10', description: 'Multiprotocol Wireless MCU', url: 'https://www.ti.com/product/CC2674R10', price1k: 4.20 }] },
 ];
 
 function CrossRef() {
@@ -263,6 +264,11 @@ function CrossRef() {
                   <div className="crossref-ti-part-info">
                     <span className="crossref-ti-part-number">{tp.part}</span>
                     <span className="crossref-ti-part-desc">{tp.description}</span>
+                    {tp.price1k != null && (
+                      <span className="crossref-ti-part-price">
+                        ${tp.price1k.toFixed(2)} <span className="crossref-price-qty">(1ku)</span>
+                      </span>
+                    )}
                   </div>
                   <div className="crossref-ti-part-action">
                     <span className="crossref-view-label">View</span>
