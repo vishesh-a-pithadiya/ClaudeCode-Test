@@ -129,6 +129,20 @@ function Home() {
             <h3>Dashboard</h3>
           </div>
         </a>
+        <div className="home-section" onClick={() => navigate('/crossref')} style={{ cursor: 'pointer' }}>
+          <div className="section-icon">
+            <svg className="section-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3" />
+              <path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3" />
+              <line x1="7" y1="12" x2="17" y2="12" />
+              <polyline points="14 9 17 12 14 15" />
+              <polyline points="10 9 7 12 10 15" />
+            </svg>
+          </div>
+          <div className="section-text">
+            <h3>CrossRef</h3>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,344 @@
+.crossref-page {
+  padding: 1rem 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.crossref-page h1 {
+  font-size: 1.4rem;
+  color: var(--ti-black);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.crossref-subtitle {
+  font-size: 0.75rem;
+  color: var(--ti-gray-500);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Search */
+.crossref-search-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.crossref-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ti-white);
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid var(--ti-gray-200);
+  transition: border-color 0.2s;
+}
+
+.crossref-search-box:focus-within {
+  border-color: var(--ti-red);
+}
+
+.crossref-search-icon {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
+
+.crossref-input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  color: var(--ti-black);
+  outline: none;
+}
+
+.crossref-input::placeholder {
+  color: var(--ti-gray-400);
+}
+
+.crossref-clear {
+  background: none;
+  border: none;
+  color: var(--ti-gray-400);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.crossref-search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--ti-red);
+  color: white;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  padding: 0 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.crossref-search-btn:active {
+  background: var(--ti-red-dark);
+}
+
+/* Suggestions */
+.crossref-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--ti-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  margin-top: 4px;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.crossref-suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 0.5px solid var(--ti-gray-200);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.crossref-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.crossref-suggestion-item:active {
+  background: var(--ti-gray-100);
+}
+
+.suggestion-part {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ti-black);
+}
+
+.suggestion-mfr {
+  font-size: 0.7rem;
+  color: var(--ti-gray-500);
+}
+
+/* Results */
+.crossref-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crossref-result-card {
+  background: var(--ti-white);
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.crossref-competitor {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--ti-gray-200);
+}
+
+.crossref-competitor-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.crossref-competitor-part {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ti-black);
+}
+
+.crossref-competitor-badge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--ti-gray-500);
+  background: var(--ti-gray-100);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.crossref-competitor-category {
+  font-size: 0.7rem;
+  color: var(--ti-gray-500);
+}
+
+.crossref-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0;
+  color: var(--ti-red);
+}
+
+.crossref-ti-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--ti-red-bg, rgba(204, 0, 0, 0.04));
+  border-top: 0.5px solid var(--ti-gray-200);
+  transition: background 0.15s;
+}
+
+.crossref-ti-part:active {
+  background: rgba(204, 0, 0, 0.1);
+}
+
+.crossref-ti-part-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.crossref-ti-part-number {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ti-red);
+}
+
+.crossref-ti-part-desc {
+  font-size: 0.7rem;
+  color: var(--ti-gray-500);
+}
+
+.crossref-ti-part-action {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--ti-red);
+  flex-shrink: 0;
+}
+
+.crossref-view-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* No results */
+.crossref-no-results {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--ti-gray-500);
+}
+
+.crossref-no-results p {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ti-black);
+}
+
+.crossref-no-results-hint {
+  font-size: 0.75rem !important;
+  color: var(--ti-gray-500) !important;
+  margin-top: 0.25rem !important;
+}
+
+.crossref-ti-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--ti-white);
+  color: var(--ti-red);
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  transition: background 0.15s;
+}
+
+.crossref-ti-link:active {
+  background: var(--ti-gray-100);
+}
+
+/* Actions row */
+.crossref-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.crossref-new-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--ti-red);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.crossref-new-search:active {
+  background: var(--ti-red-dark);
+}
+
+/* Browse section */
+.crossref-browse {
+  margin-top: 0.5rem;
+}
+
+.crossref-browse-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ti-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+}
+
+.crossref-mfr-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.crossref-mfr-chip {
+  background: var(--ti-white);
+  border: 1px solid var(--ti-gray-200);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ti-black);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.crossref-mfr-chip:active {
+  background: var(--ti-red);
+  color: white;
+  border-color: var(--ti-red);
+}

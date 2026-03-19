@@ -8,6 +8,7 @@ import Search from './pages/Search';
 import Login from './pages/Login';
 import Settings from './pages/Settings';
 import Products from './pages/Products';
+import CrossRef from './pages/CrossRef';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/oauth/callback" element={<Login />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/crossref" element={<CrossRef />} />
           </Routes>
         </main>
       </div>
