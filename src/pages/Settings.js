@@ -59,43 +59,6 @@ function Settings() {
         </svg>
       </div>
 
-      {/* Ordering Section */}
-      <div className="settings-section">
-        <div className="settings-section-header">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
-            <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-          </svg>
-          <span>Ordering</span>
-        </div>
-        <div className="settings-group">
-          <a href="https://www.ti.com/orderhistory/" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Order history</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Checkout profiles</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Addresses</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Tax IDs</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Freight carriers</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Payment methods</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-        </div>
-      </div>
-
       {/* App Settings Section */}
       <div className="settings-section">
         <div className="settings-section-header">
@@ -141,38 +104,6 @@ function Settings() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Tools & Resources Section */}
-      <div className="settings-section">
-        <div className="settings-section-header">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-          </svg>
-          <span>Tools & resources</span>
-        </div>
-        <div className="settings-group">
-          <a href="https://www.ti.com" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Material attribute search</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">List manager</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com/design-resources/design-tools-simulation.html" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">My designs</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://dev.ti.com" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">TI Developer Zone</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
-          <a href="https://www.ti.com" target="_blank" rel="noopener noreferrer" className="settings-row">
-            <span className="settings-label">Secure resources</span>
-            <svg className="settings-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
         </div>
       </div>
 
