@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Products.css';
 
 // Sector → End Equipment → Sub-systems (final level links to TI.com)
@@ -173,6 +174,7 @@ const PRODUCT_TREE = {
 const LEVEL_LABELS = ['Sector', 'End Equipment', 'Sub-system'];
 
 function Products() {
+  const navigate = useNavigate();
   const [path, setPath] = useState([]);
 
   const getCurrentItems = () => {
@@ -197,6 +199,12 @@ function Products() {
 
   return (
     <div className="products-page">
+      <button className="products-home-back" onClick={() => navigate('/home')}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Home
+      </button>
       <h1>TI Products</h1>
 
       {/* Breadcrumb */}

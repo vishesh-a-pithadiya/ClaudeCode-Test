@@ -9,6 +9,40 @@
   text-align: center;
 }
 
+.home-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.home-back-btn {
+  position: absolute;
+  left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.home-back-btn:hover {
+  background: rgba(204, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .home-back-btn {
+  color: #ff6b6b;
+}
+
+[data-theme="dark"] .home-back-btn:hover {
+  background: rgba(255, 107, 107, 0.12);
+}
+
 .hero-icon {
   display: none;
 }

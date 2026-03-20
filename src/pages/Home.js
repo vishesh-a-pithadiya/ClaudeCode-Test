@@ -25,7 +25,14 @@ function Home() {
   return (
     <div className="home">
       <div className="hero">
-        <h1>Welcome to <span>TI App</span></h1>
+        <div className="home-header-row">
+          <button className="home-back-btn" onClick={() => navigate('/')}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <h1>Welcome to <span>TI App</span></h1>
+        </div>
         <p className="home-subtitle">
           Your gateway to TI products, support, and design tools.
         </p>

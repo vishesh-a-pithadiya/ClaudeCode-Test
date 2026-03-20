@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate as useRouterNavigate } from 'react-router-dom';
 import './KnowledgeBank.css';
 
 // Decision tree: each node has a question, options, and either children nodes or results
@@ -374,6 +375,7 @@ const DECISION_TREE = {
 };
 
 function KnowledgeBank() {
+  const routerNavigate = useRouterNavigate();
   const [path, setPath] = useState([]); // array of selected option indices
   const [currentNode, setCurrentNode] = useState(DECISION_TREE);
 
@@ -412,6 +414,12 @@ function KnowledgeBank() {
 
   return (
     <div className="kb-page">
+      <button className="kb-home-back" onClick={() => routerNavigate('/home')}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Home
+      </button>
       <h1 className="kb-title" onClick={reset} style={{ cursor: 'pointer' }}>Knowledge Bank</h1>
       <p className="kb-subtitle">Answer a few questions to find relevant resources</p>
 

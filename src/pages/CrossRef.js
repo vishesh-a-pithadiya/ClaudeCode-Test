@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CrossRef.css';
 
 // Cross-reference database: competitor part → TI equivalent(s)
@@ -306,6 +307,7 @@ const CROSSREF_DB = [
 ];
 
 function CrossRef() {
+  const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [searched, setSearched] = useState(false);
@@ -371,6 +373,12 @@ function CrossRef() {
 
   return (
     <div className="crossref-page">
+      <button className="crossref-home-back" onClick={() => navigate('/home')}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Home
+      </button>
       <h1 className="crossref-title" onClick={() => { setQuery(''); setResults([]); setSearched(false); setSuggestions([]); setShowSuggestions(false); }} style={{ cursor: 'pointer' }}>CrossRef</h1>
       <p className="crossref-subtitle">
         Find TI equivalents for competitor semiconductor parts

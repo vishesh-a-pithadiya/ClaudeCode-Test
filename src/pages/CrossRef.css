@@ -2,6 +2,37 @@
   padding: 1rem 0;
   max-width: 700px;
   margin: 0 auto;
+  position: relative;
+}
+
+.crossref-home-back {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.crossref-home-back:hover {
+  background: rgba(204, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .crossref-home-back {
+  color: #ff6b6b;
+}
+
+[data-theme="dark"] .crossref-home-back:hover {
+  background: rgba(255, 107, 107, 0.12);
 }
 
 .crossref-page h1 {
