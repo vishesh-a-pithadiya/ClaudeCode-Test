@@ -3,8 +3,39 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   padding: 2rem 1rem;
+  background: var(--bg);
+}
+
+.landing-back-btn {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.landing-back-btn:hover {
+  background: rgba(204, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .landing-back-btn {
+  color: #ff6b6b;
+}
+
+[data-theme="dark"] .landing-back-btn:hover {
+  background: rgba(255, 107, 107, 0.12);
 }
 
 .landing-logo {
@@ -12,7 +43,7 @@
 }
 
 .landing-logo-img {
-  width: 80px;
+  width: 220px;
   height: auto;
 }
 
@@ -21,17 +52,17 @@
 }
 
 .landing-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--ti-black);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   text-align: center;
 }
 
 .landing-subtitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #666;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -39,64 +70,321 @@
   color: #aaa;
 }
 
-.landing-options {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.landing-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+/* Login card */
+.landing-login-card {
+  width: 100%;
+  max-width: 380px;
   background: var(--card-bg);
-  border: 2px solid #e0e0e0;
-  border-radius: 16px;
-  padding: 2rem 2.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-width: 150px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.75rem;
 }
 
-.landing-option:hover {
-  border-color: var(--ti-red);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(204, 0, 0, 0.12);
+[data-theme="dark"] .landing-login-card {
+  border-color: #444;
 }
 
-.landing-option:active {
-  transform: translateY(0);
-}
-
-[data-theme="dark"] .landing-option {
-  border-color: #333;
-}
-
-[data-theme="dark"] .landing-option:hover {
-  border-color: #ff6b6b;
-  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.15);
-}
-
-.landing-option-icon {
-  color: var(--ti-red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(204, 0, 0, 0.08);
-}
-
-[data-theme="dark"] .landing-option-icon {
-  color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.12);
-}
-
-.landing-option-label {
-  font-size: 1.1rem;
+.landing-label {
+  display: block;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--ti-black);
+  margin-bottom: 0.4rem;
+}
+
+.landing-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--ti-black);
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.landing-input:focus {
+  outline: none;
+  border-color: var(--ti-red);
+}
+
+[data-theme="dark"] .landing-input {
+  border-color: #444;
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .landing-input:focus {
+  border-color: #ff6b6b;
+}
+
+.landing-hint {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.landing-error {
+  font-size: 0.8rem;
+  color: var(--ti-red);
+  margin-top: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.landing-login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: var(--ti-red);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.landing-login-btn:hover:not(:disabled) {
+  background: #a30000;
+}
+
+.landing-login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[data-theme="dark"] .landing-login-btn {
+  background: #ff6b6b;
+  color: #111;
+}
+
+[data-theme="dark"] .landing-login-btn:hover:not(:disabled) {
+  background: #ff4a4a;
+}
+
+/* Account row for step 2 */
+.landing-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .landing-account-row {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.landing-account-email {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ti-black);
+}
+
+.landing-change-btn {
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .landing-change-btn {
+  color: #ff6b6b;
+}
+
+/* Divider */
+.landing-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.landing-divider::before,
+.landing-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+[data-theme="dark"] .landing-divider::before,
+[data-theme="dark"] .landing-divider::after {
+  background: #444;
+}
+
+.landing-divider span {
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Skip / guest button */
+.landing-skip-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  color: var(--ti-black);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.landing-skip-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: #999;
+}
+
+[data-theme="dark"] .landing-skip-btn {
+  border-color: #444;
+  color: #eee;
+}
+
+[data-theme="dark"] .landing-skip-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #666;
+}
+
+/* Footer links */
+.landing-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.landing-footer-links a {
+  font-size: 0.8rem;
+  color: var(--ti-red);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.landing-footer-links a:hover {
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .landing-footer-links a {
+  color: #ff6b6b;
+}
+
+.landing-link-sep {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Role selection cards — iOS grouped list style */
+.landing-role-options {
+  width: 100%;
+  max-width: 380px;
+  background: var(--card-bg);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .landing-role-options {
+  border-color: #444;
+}
+
+.landing-role-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-align: left;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  color: var(--ti-black);
+}
+
+.landing-role-card:last-child {
+  border-bottom: none;
+}
+
+.landing-role-card:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.landing-role-card:active {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .landing-role-card {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .landing-role-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .landing-role-card:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.landing-role-card svg:first-child {
+  flex-shrink: 0;
+  color: var(--ti-red);
+}
+
+[data-theme="dark"] .landing-role-card svg:first-child {
+  color: #ff6b6b;
+}
+
+.landing-role-label {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ti-black);
+}
+
+.landing-role-chevron {
+  flex-shrink: 0;
+  color: #c7c7cc;
+}
+
+[data-theme="dark"] .landing-role-chevron {
+  color: #555;
+}
+
+/* Authenticated welcome state */
+.landing-enter-btn {
+  padding: 0.85rem 2.5rem;
+  background: var(--ti-red);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 0.5rem;
+}
+
+.landing-enter-btn:hover {
+  background: #a30000;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .landing-enter-btn {
+  background: #ff6b6b;
+  color: #111;
+}
+
+[data-theme="dark"] .landing-enter-btn:hover {
+  background: #ff4a4a;
 }

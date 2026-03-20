@@ -26,7 +26,7 @@ function Home() {
     <div className="home">
       <div className="hero">
         <div className="home-header-row">
-          <button className="home-back-btn" onClick={() => navigate('/')}>
+          <button className="home-back-btn" onClick={() => navigate('/?step=role')}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
               <polyline points="15 18 9 12 15 6" />
             </svg>
@@ -150,6 +150,17 @@ function Home() {
             <h3>CrossRef</h3>
           </div>
         </div>
+        <a href="https://training.ti.com/" target="_blank" rel="noopener noreferrer" className="home-section">
+          <div className="section-icon">
+            <svg className="section-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <div className="section-text">
+            <h3>Training</h3>
+          </div>
+        </a>
       </div>
     </div>
   );
