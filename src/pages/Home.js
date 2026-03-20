@@ -8,6 +8,8 @@ function Home() {
   const navigate = useNavigate();
   const designRef = useRef(null);
   const supportRef = useRef(null);
+  const userRole = localStorage.getItem('userRole');
+  const isFAE = userRole === 'fae';
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -61,6 +63,7 @@ function Home() {
             <h3>TI Products</h3>
           </div>
         </div>
+        {!isFAE && (
         <div ref={designRef} className="home-section design-section" onClick={() => setDesignOpen(!designOpen)} style={{ cursor: 'pointer' }}>
           {!designOpen ? (
             <>
@@ -90,6 +93,7 @@ function Home() {
             </div>
           )}
         </div>
+        )}
         <div ref={supportRef} className="home-section support-section" onClick={() => setSupportOpen(!supportOpen)} style={{ cursor: 'pointer' }}>
           {!supportOpen ? (
             <>
@@ -123,6 +127,7 @@ function Home() {
             </div>
           )}
         </div>
+        {!isFAE && (
         <a href="https://www.ti.com/myti-dashboard/docs/mytidashboard" target="_blank" rel="noopener noreferrer" className="home-section">
           <div className="section-icon">
             <svg className="section-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -136,6 +141,7 @@ function Home() {
             <h3>Dashboard</h3>
           </div>
         </a>
+        )}
         <div className="home-section" onClick={() => navigate('/crossref')} style={{ cursor: 'pointer' }}>
           <div className="section-icon">
             <svg className="section-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
