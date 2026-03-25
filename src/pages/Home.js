@@ -156,7 +156,7 @@ function Home() {
             <h3>CrossRef</h3>
           </div>
         </div>
-        <a href="https://training.ti.com/" target="_blank" rel="noopener noreferrer" className="home-section">
+        <div className="home-section" onClick={() => navigate('/training')} style={{ cursor: 'pointer' }}>
           <div className="section-icon">
             <svg className="section-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -166,7 +166,7 @@ function Home() {
           <div className="section-text">
             <h3>Training</h3>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   );

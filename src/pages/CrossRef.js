@@ -255,28 +255,49 @@ const CROSSREF_DB = [
   { competitor: 'HCPL-3120', manufacturer: 'Broadcom', category: 'Isolation', tiParts: [{ part: 'UCC21520', description: 'Isolated Dual-Channel Gate Driver', url: 'https://www.ti.com/product/UCC21520', price1k: 2.15 }] },
 
   // --- USB Hubs ---
-  { competitor: 'USB2514B', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 2.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
-  { competitor: 'USB2517', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 2.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
-  { competitor: 'USB5744', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'USB2502', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB4020BI', description: '2-Port USB 2.0 High-Speed Hub', url: 'https://www.ti.com/product/TUSB4020BI', price1k: 2.40 }] },
+  { competitor: 'USB2512B', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB4020BI', description: '2-Port USB 2.0 High-Speed Hub', url: 'https://www.ti.com/product/TUSB4020BI', price1k: 2.40 }] },
+  { competitor: 'USB2514B', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB4041', description: '4-Port USB 2.0 High-Speed Hub', url: 'https://www.ti.com/product/TUSB4041', price1k: 3.10 }] },
+  { competitor: 'USB2517', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
+  { competitor: 'USB5734', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'USB5744', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'USB5807', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
   { competitor: 'USB2240', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8020B', description: '2-Port USB 3.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8020B', price1k: 3.75 }] },
-  { competitor: 'USB4715', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
-  { competitor: 'GL850G', manufacturer: 'Genesys Logic', category: 'USB Hubs', tiParts: [{ part: 'TUSB2046B', description: '4-Port USB 2.0 Hub', url: 'https://www.ti.com/product/TUSB2046B', price1k: 1.85 }] },
-  { competitor: 'GL3523', manufacturer: 'Genesys Logic', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
-  { competitor: 'FE1.1s', manufacturer: 'Terminus Technology', category: 'USB Hubs', tiParts: [{ part: 'TUSB2046B', description: '4-Port USB 2.0 Hub', url: 'https://www.ti.com/product/TUSB2046B', price1k: 1.85 }] },
-  { competitor: 'VL817', manufacturer: 'VIA Labs', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
-  { competitor: 'CYUSB3304', manufacturer: 'Infineon', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
-  { competitor: 'RTS5411', manufacturer: 'Realtek', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 2.0 Hub Controller', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
+  { competitor: 'USB4715', manufacturer: 'Microchip', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'GL850G', manufacturer: 'Genesys Logic', category: 'USB Hubs', tiParts: [{ part: 'TUSB2046B', description: '4-Port USB 2.0 Full-Speed Hub', url: 'https://www.ti.com/product/TUSB2046B', price1k: 1.85 }] },
+  { competitor: 'GL3520', manufacturer: 'Genesys Logic', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
+  { competitor: 'GL3523', manufacturer: 'Genesys Logic', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'GL3590', manufacturer: 'Genesys Logic', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'FE1.1s', manufacturer: 'Terminus Technology', category: 'USB Hubs', tiParts: [{ part: 'TUSB2046B', description: '4-Port USB 2.0 Full-Speed Hub', url: 'https://www.ti.com/product/TUSB2046B', price1k: 1.85 }] },
+  { competitor: 'VL812', manufacturer: 'VIA Labs', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
+  { competitor: 'VL813', manufacturer: 'VIA Labs', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
+  { competitor: 'VL817', manufacturer: 'VIA Labs', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'ASM1074', manufacturer: 'ASMedia', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
+  { competitor: 'CYUSB3304', manufacturer: 'Infineon', category: 'USB Hubs', tiParts: [{ part: 'TUSB8042A', description: '4-Port USB 3.1 Gen1 Hub Controller', url: 'https://www.ti.com/product/TUSB8042A', price1k: 4.50 }] },
+  { competitor: 'RTS5411', manufacturer: 'Realtek', category: 'USB Hubs', tiParts: [{ part: 'TUSB8041', description: '4-Port USB 3.0 SuperSpeed Hub', url: 'https://www.ti.com/product/TUSB8041', price1k: 3.10 }] },
 
   // --- USB Redrivers / Signal Conditioners ---
-  { competitor: 'PI3USB30532', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'USB 3.1 Gen2 10Gbps Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
-  { competitor: 'PI3USB102', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'USB 3.1 Gen2 10Gbps Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
-  { competitor: 'NB7VPQ904M', manufacturer: 'onsemi', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'USB 3.1 Gen2 10Gbps Linear Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
-  { competitor: 'PTN36502', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'USB 3.1 Gen2 10Gbps Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
-  { competitor: 'HD3SS3220', manufacturer: 'Renesas', category: 'USB Redrivers', tiParts: [{ part: 'HD3SS3220', description: 'USB Type-C DRP Port Controller w/ SuperSpeed 2:1 Mux', url: 'https://www.ti.com/product/HD3SS3220', price1k: 1.25 }] },
-  { competitor: 'CBTL02042A', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB542', description: 'USB 2.0 Signal Conditioner', url: 'https://www.ti.com/product/TUSB542', price1k: 0.65 }] },
-  { competitor: 'PI3EQX1002E', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'USB 3.1 10Gbps Linear Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
-  { competitor: 'TUSB1146', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1146', description: 'USB Type-C Alt-Mode Redriver', url: 'https://www.ti.com/product/TUSB1146', price1k: 1.50 }] },
-  { competitor: 'IP2721', manufacturer: 'Injoinic', category: 'USB Redrivers', tiParts: [{ part: 'TUSB542', description: 'USB 2.0 Signal Conditioner', url: 'https://www.ti.com/product/TUSB542', price1k: 0.65 }] },
+  { competitor: 'PI3EQX1004E', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1004', description: '4-Channel USB 3.2 Gen2 10Gbps Adaptive Redriver', url: 'https://www.ti.com/product/TUSB1004', price1k: 2.50 }] },
+  { competitor: 'PI3EQX1002E', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'Dual-Channel USB 3.1 Gen2 10Gbps Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
+  { competitor: 'PI3USB30532', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'PI3USB102', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'Dual-Channel USB 3.1 Gen2 10Gbps Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
+  { competitor: 'PI2DPX2020', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'PI3EQX10312', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'PI3EQX10612', manufacturer: 'Diodes Inc', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'NB7VPQ904M', manufacturer: 'onsemi', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'Dual-Channel USB 3.1 Gen2 10Gbps Linear Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
+  { competitor: 'PTN38003A', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'PTN38007', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'PTN36502', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1004', description: '4-Channel USB 3.2 Gen1 5Gbps Redriver', url: 'https://www.ti.com/product/TUSB1004', price1k: 2.50 }] },
+  { competitor: 'PTN36241B', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1004', description: '4-Channel USB 3.2 Gen1 5Gbps Redriver', url: 'https://www.ti.com/product/TUSB1004', price1k: 2.50 }] },
+  { competitor: 'CBTU02043', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB542', description: 'USB Type-C 5Gbps 2:1 Mux with Redriver', url: 'https://www.ti.com/product/TUSB542', price1k: 0.65 }] },
+  { competitor: 'CBTL02042A', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB542', description: 'USB Type-C 5Gbps 2:1 Mux with Redriver', url: 'https://www.ti.com/product/TUSB542', price1k: 0.65 }] },
+  { competitor: 'PS8713', manufacturer: 'Parade Technologies', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1004', description: '4-Channel USB 3.2 Gen1 5Gbps Redriver', url: 'https://www.ti.com/product/TUSB1004', price1k: 2.50 }] },
+  { competitor: 'PS8719E', manufacturer: 'Parade Technologies', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1004', description: '4-Channel USB 3.2 Gen1 5Gbps Redriver', url: 'https://www.ti.com/product/TUSB1004', price1k: 2.50 }] },
+  { competitor: 'PS8743', manufacturer: 'Parade Technologies', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
+  { competitor: 'PS8802', manufacturer: 'Parade Technologies', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1064', description: 'USB Type-C DP Alt Mode 10Gbps Redriver (Sink)', url: 'https://www.ti.com/product/TUSB1064', price1k: 2.60 }] },
+  { competitor: 'PS8818', manufacturer: 'Parade Technologies', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1002', description: 'Dual-Channel USB 3.1 Gen2 10Gbps Redriver', url: 'https://www.ti.com/product/TUSB1002', price1k: 1.95 }] },
+  { competitor: 'IP2721', manufacturer: 'Injoinic', category: 'USB Redrivers', tiParts: [{ part: 'TUSB211', description: 'USB 2.0 High-Speed Signal Conditioner', url: 'https://www.ti.com/product/TUSB211', price1k: 0.45 }] },
+  { competitor: 'TUSB1146', manufacturer: 'NXP', category: 'USB Redrivers', tiParts: [{ part: 'TUSB1046', description: 'USB Type-C DP Alt Mode 10Gbps Redriver Crosspoint', url: 'https://www.ti.com/product/TUSB1046-DCI', price1k: 2.80 }] },
 
   // --- USB Host Controllers ---
   { competitor: 'MAX3421E', manufacturer: 'Maxim', category: 'USB Host Controllers', tiParts: [{ part: 'TUSB3410', description: 'USB Device Controller with UART', url: 'https://www.ti.com/product/TUSB3410', price1k: 2.30 }] },
@@ -293,17 +314,27 @@ const CROSSREF_DB = [
   // --- USB Type-C / PD Controllers ---
   { competitor: 'CYPD3177', manufacturer: 'Infineon', category: 'USB Type-C', tiParts: [{ part: 'TPS25750', description: 'USB Type-C & PD 3.0 Controller', url: 'https://www.ti.com/product/TPS25750', price1k: 3.50 }] },
   { competitor: 'CYPD3125', manufacturer: 'Infineon', category: 'USB Type-C', tiParts: [{ part: 'TPS65988', description: 'Dual-Port USB Type-C PD Controller', url: 'https://www.ti.com/product/TPS65988', price1k: 4.20 }] },
-  { competitor: 'FUSB302', manufacturer: 'onsemi', category: 'USB Type-C', tiParts: [{ part: 'TPS25750', description: 'USB Type-C & PD Controller', url: 'https://www.ti.com/product/TPS25750', price1k: 3.50 }] },
+  { competitor: 'FUSB302', manufacturer: 'onsemi', category: 'USB Type-C', tiParts: [{ part: 'TUSB320', description: 'USB Type-C CC Logic Port Controller', url: 'https://www.ti.com/product/TUSB320', price1k: 0.50 }, { part: 'TPS25750', description: 'USB Type-C & PD Controller', url: 'https://www.ti.com/product/TPS25750', price1k: 3.50 }] },
+  { competitor: 'FUSB302B', manufacturer: 'onsemi', category: 'USB Type-C', tiParts: [{ part: 'TUSB320', description: 'USB Type-C CC Logic Port Controller', url: 'https://www.ti.com/product/TUSB320', price1k: 0.50 }, { part: 'TPS25750', description: 'USB Type-C & PD Controller', url: 'https://www.ti.com/product/TPS25750', price1k: 3.50 }] },
+  { competitor: 'FUSB303B', manufacturer: 'onsemi', category: 'USB Type-C', tiParts: [{ part: 'TUSB320', description: 'USB Type-C CC Logic Port Controller', url: 'https://www.ti.com/product/TUSB320', price1k: 0.50 }] },
   { competitor: 'FUSB307', manufacturer: 'onsemi', category: 'USB Type-C', tiParts: [{ part: 'TPS65987D', description: 'USB Type-C PD Controller w/ Integrated Power Path', url: 'https://www.ti.com/product/TPS65987D', price1k: 3.95 }] },
   { competitor: 'PTN5110', manufacturer: 'NXP', category: 'USB Type-C', tiParts: [{ part: 'TPS25750', description: 'USB Type-C & PD 3.0 Controller', url: 'https://www.ti.com/product/TPS25750', price1k: 3.50 }] },
+  { competitor: 'STUSB1600', manufacturer: 'STMicroelectronics', category: 'USB Type-C', tiParts: [{ part: 'TUSB320', description: 'USB Type-C CC Logic Port Controller', url: 'https://www.ti.com/product/TUSB320', price1k: 0.50 }] },
+  { competitor: 'STUSB4500', manufacturer: 'STMicroelectronics', category: 'USB Type-C', tiParts: [{ part: 'TUSB321', description: 'USB Type-C CC Logic (UFP/Device)', url: 'https://www.ti.com/product/TUSB321', price1k: 0.45 }, { part: 'TPS25750', description: 'USB Type-C & PD Controller', url: 'https://www.ti.com/product/TPS25750', price1k: 3.50 }] },
   { competitor: 'TCPC', manufacturer: 'Richtek', category: 'USB Type-C', tiParts: [{ part: 'TPS65982', description: 'USB Type-C & PD Controller', url: 'https://www.ti.com/product/TPS65982', price1k: 3.10 }] },
   { competitor: 'WUSB3801', manufacturer: 'Will Semiconductor', category: 'USB Type-C', tiParts: [{ part: 'TUSB322I', description: 'USB Type-C Configuration Channel Logic', url: 'https://www.ti.com/product/TUSB322I', price1k: 0.55 }] },
 
   // --- USB Mux / Switches ---
   { competitor: 'PI3USB9281', manufacturer: 'Diodes Inc', category: 'USB Switches', tiParts: [{ part: 'TS3USB221', description: 'USB 2.0 1:2 Mux/Demux Switch', url: 'https://www.ti.com/product/TS3USB221', price1k: 0.45 }] },
-  { competitor: 'FSA4480', manufacturer: 'onsemi', category: 'USB Switches', tiParts: [{ part: 'TS3USB221', description: 'USB 2.0 High-Speed Mux/Demux', url: 'https://www.ti.com/product/TS3USB221', price1k: 0.45 }] },
+  { competitor: 'PI3USB102', manufacturer: 'Diodes Inc', category: 'USB Switches', tiParts: [{ part: 'TS3USB221', description: 'USB 2.0 1:2 Mux/Demux Switch', url: 'https://www.ti.com/product/TS3USB221', price1k: 0.45 }] },
+  { competitor: 'PI3USB31532', manufacturer: 'Diodes Inc', category: 'USB Switches', tiParts: [{ part: 'HD3SS3220', description: 'USB Type-C DRP Port Controller w/ SS 10Gbps 2:1 Mux', url: 'https://www.ti.com/product/HD3SS3220', price1k: 1.25 }] },
+  { competitor: 'FSA4480', manufacturer: 'onsemi', category: 'USB Switches', tiParts: [{ part: 'TS5USBA224', description: 'USB 2.0 + Audio DPDT Multiplexer', url: 'https://www.ti.com/product/TS5USBA224', price1k: 0.55 }] },
+  { competitor: 'FSUSB42', manufacturer: 'onsemi', category: 'USB Switches', tiParts: [{ part: 'TS3USB221', description: 'USB 2.0 1:2 Mux/Demux Switch', url: 'https://www.ti.com/product/TS3USB221', price1k: 0.45 }, { part: 'TS3USB30', description: 'USB 2.0 1:2 Mux/Demux with Enable', url: 'https://www.ti.com/product/TS3USB30', price1k: 0.40 }] },
+  { competitor: 'FUSB340', manufacturer: 'onsemi', category: 'USB Switches', tiParts: [{ part: 'TUSB542', description: 'USB Type-C 5Gbps 2:1 Mux with Redriver', url: 'https://www.ti.com/product/TUSB542', price1k: 0.65 }, { part: 'HD3SS3220', description: 'USB Type-C DRP Port Controller w/ SS 2:1 Mux', url: 'https://www.ti.com/product/HD3SS3220', price1k: 1.25 }] },
   { competitor: 'CBTL06GP213', manufacturer: 'NXP', category: 'USB Switches', tiParts: [{ part: 'HD3SS460', description: 'USB Type-C SuperSpeed Alt-Mode Mux', url: 'https://www.ti.com/product/HD3SS460', price1k: 2.10 }] },
   { competitor: 'PI3DPX1207C', manufacturer: 'Diodes Inc', category: 'USB Switches', tiParts: [{ part: 'HD3SS460', description: 'USB/DP Alt-Mode SuperSpeed Mux', url: 'https://www.ti.com/product/HD3SS460', price1k: 2.10 }] },
+  { competitor: 'NX3L2267', manufacturer: 'NXP', category: 'USB Switches', tiParts: [{ part: 'TS3USB221', description: 'USB 2.0 1:2 Mux/Demux Switch', url: 'https://www.ti.com/product/TS3USB221', price1k: 0.45 }] },
+  { competitor: 'PTN36043', manufacturer: 'NXP', category: 'USB Switches', tiParts: [{ part: 'TUSB542', description: 'USB Type-C 5Gbps 2:1 Mux with Redriver', url: 'https://www.ti.com/product/TUSB542', price1k: 0.65 }] },
 ];
 
 function CrossRef() {
@@ -525,7 +556,7 @@ function CrossRef() {
         <div className="crossref-browse">
           <h3 className="crossref-browse-title">Browse by Manufacturer</h3>
           <div className="crossref-mfr-grid">
-            {['Analog Devices', 'STMicroelectronics', 'Microchip', 'NXP', 'Infineon', 'onsemi', 'Maxim', 'Nordic', 'Espressif', 'Renesas', 'Silicon Labs', 'FTDI', 'Rohm', 'Allegro', 'Diodes Inc', 'Torex', 'MPS', 'Semtech', 'Broadcom', 'Genesys Logic', 'VIA Labs', 'ASMedia'].map(mfr => (
+            {['Analog Devices', 'STMicroelectronics', 'Microchip', 'NXP', 'Infineon', 'onsemi', 'Maxim', 'Nordic', 'Espressif', 'Renesas', 'Silicon Labs', 'FTDI', 'Rohm', 'Allegro', 'Diodes Inc', 'Torex', 'MPS', 'Semtech', 'Broadcom', 'Genesys Logic', 'VIA Labs', 'ASMedia', 'Parade Technologies', 'Realtek'].map(mfr => (
               <button key={mfr} className="crossref-mfr-chip" onClick={() => { setQuery(mfr); doSearch(mfr); }}>
                 {mfr}
               </button>

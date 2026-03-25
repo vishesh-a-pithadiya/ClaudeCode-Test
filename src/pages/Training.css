@@ -1,0 +1,188 @@
+.training-page {
+  padding: 1rem 0;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.training-home-back {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.training-home-back:hover {
+  background: rgba(204, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .training-home-back {
+  color: #ff6b6b;
+}
+
+[data-theme="dark"] .training-home-back:hover {
+  background: rgba(255, 107, 107, 0.12);
+}
+
+.training-page h1 {
+  font-size: 1.4rem;
+  color: var(--ti-black);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Breadcrumb */
+.training-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.4rem 0;
+  margin-bottom: 0.25rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.training-breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+/* Level indicator */
+.training-level {
+  font-size: 0.7rem;
+  color: var(--ti-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Back button */
+.training-back {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: var(--ti-red);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.15s;
+}
+
+.training-back:active {
+  opacity: 0.6;
+}
+
+/* Tree list */
+.training-tree-list {
+  background: var(--ti-white);
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.training-tree-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 0.5px solid var(--ti-gray-200);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.training-tree-item:last-child {
+  border-bottom: none;
+}
+
+.training-tree-item:active {
+  background: var(--ti-gray-100);
+}
+
+.training-tree-item-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ti-black);
+}
+
+.training-tree-item-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.training-tree-item-count {
+  font-size: 0.65rem;
+  color: var(--ti-gray-500);
+  background: var(--ti-gray-100);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+}
+
+.training-tree-chevron {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
+
+/* Resource items (final level) */
+.training-resource-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: var(--ti-black);
+  border-bottom: 0.5px solid var(--ti-gray-200);
+  transition: background 0.15s ease;
+}
+
+.training-resource-item:last-child {
+  border-bottom: none;
+}
+
+.training-resource-item:active {
+  background: var(--ti-gray-100);
+}
+
+.training-type-icon {
+  flex-shrink: 0;
+}
+
+.training-type-video {
+  color: var(--ti-red);
+}
+
+.training-type-appnote {
+  color: var(--ti-gray-500);
+}
+
+.training-resource-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+}
+
+.training-external {
+  color: var(--ti-gray-400);
+  flex-shrink: 0;
+}
