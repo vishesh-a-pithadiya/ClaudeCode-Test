@@ -12,7 +12,7 @@ const TRAINING_TREE = {
         { name: 'Understanding Buck Power Stages', url: 'https://www.ti.com/lit/an/slva057/slva057.pdf', type: 'appnote' },
         { name: 'Boost Converter Design Guide', url: 'https://www.ti.com/lit/an/slva372d/slva372d.pdf', type: 'appnote' },
         { name: 'Buck-Boost Converter Design', url: 'https://www.ti.com/lit/an/slva535a/slva535a.pdf', type: 'appnote' },
-        { name: 'Voltage Mode vs Current Mode Control', url: 'https://www.ti.com/lit/an/slva057/slva057.pdf', type: 'appnote' },
+        { name: 'Voltage Mode vs Current Mode Control', url: 'https://www.ti.com/lit/pdf/slua119', type: 'appnote' },
         { name: 'Thermal Design for DC/DC Converters', url: 'https://www.ti.com/lit/an/slva462/slva462.pdf', type: 'appnote' },
       ],
       'Training Videos': [
@@ -40,7 +40,7 @@ const TRAINING_TREE = {
     },
     'Battery Management': {
       'App Notes': [
-        { name: 'Battery Charger Design Guide', url: 'https://www.ti.com/lit/an/slua704/slua704.pdf', type: 'appnote' },
+        { name: 'Battery Charger Design Guide', url: 'https://www.ti.com/lit/an/sluaar7/sluaar7.pdf', type: 'appnote' },
         { name: 'BQ25890 USB Charger Design', url: 'https://www.ti.com/lit/an/slua748/slua748.pdf', type: 'appnote' },
         { name: 'Battery Fuel Gauging Basics', url: 'https://www.ti.com/lit/an/slua694a/slua694a.pdf', type: 'appnote' },
         { name: 'Multi-Cell Battery Pack Design', url: 'https://www.ti.com/lit/an/slua751/slua751.pdf', type: 'appnote' },
@@ -57,7 +57,7 @@ const TRAINING_TREE = {
     'Gate Drivers': {
       'App Notes': [
         { name: 'Gate Driver Design Guide', url: 'https://www.ti.com/lit/an/slua618a/slua618a.pdf', type: 'appnote' },
-        { name: 'Isolated Gate Driver Basics', url: 'https://www.ti.com/lit/an/slla316/slla316.pdf', type: 'appnote' },
+        { name: 'Isolated Gate Driver Basics', url: 'https://www.ti.com/lit/pdf/slua618', type: 'appnote' },
         { name: 'Half-Bridge Gate Driver Design', url: 'https://www.ti.com/lit/an/slua887/slua887.pdf', type: 'appnote' },
         { name: 'GaN FET Gate Driver Selection', url: 'https://www.ti.com/lit/an/snoaa15/snoaa15.pdf', type: 'appnote' },
       ],
@@ -71,7 +71,7 @@ const TRAINING_TREE = {
       'App Notes': [
         { name: 'LED Driver Design Basics', url: 'https://www.ti.com/lit/an/slva325/slva325.pdf', type: 'appnote' },
         { name: 'Automotive LED Lighting Design', url: 'https://www.ti.com/lit/an/slva753/slva753.pdf', type: 'appnote' },
-        { name: 'High-Power LED Thermal Management', url: 'https://www.ti.com/lit/an/slva478/slva478.pdf', type: 'appnote' },
+        { name: 'High-Power LED Thermal Management', url: 'https://www.ti.com/lit/an/slva559/slva559.pdf', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'LED Driver Topologies', url: 'https://training.ti.com/led-driver-topologies', type: 'video' },
@@ -81,7 +81,7 @@ const TRAINING_TREE = {
     'AC/DC & Isolated Power': {
       'App Notes': [
         { name: 'Flyback Converter Design', url: 'https://www.ti.com/lit/an/slua143/slua143.pdf', type: 'appnote' },
-        { name: 'LLC Resonant Converter Design', url: 'https://www.ti.com/lit/an/slua478/slua478.pdf', type: 'appnote' },
+        { name: 'LLC Resonant Converter Design', url: 'https://www.ti.com/lit/an/slua582a/slua582a.pdf', type: 'appnote' },
         { name: 'Transformer Design for Flyback', url: 'https://www.ti.com/lit/an/slua248/slua248.pdf', type: 'appnote' },
         { name: 'PFC Circuit Design Guide', url: 'https://www.ti.com/lit/an/slua369/slua369.pdf', type: 'appnote' },
       ],
@@ -251,7 +251,7 @@ const TRAINING_TREE = {
       'App Notes': [
         { name: 'DRV8xx Brushed DC Motor Control', url: 'https://www.ti.com/lit/an/slva859/slva859.pdf', type: 'appnote' },
         { name: 'H-Bridge Motor Driver Design', url: 'https://www.ti.com/lit/an/slva642/slva642.pdf', type: 'appnote' },
-        { name: 'PWM Frequency Selection for DC Motors', url: 'https://www.ti.com/lit/an/slva704/slva704.pdf', type: 'appnote' },
+        { name: 'PWM Frequency Selection for DC Motors', url: 'https://www.ti.com/lit/pdf/slvafl7', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'Brushed DC Motor Driver Basics', url: 'https://training.ti.com/brushed-dc-motor-basics', type: 'video' },
@@ -377,7 +377,7 @@ const TRAINING_TREE = {
       'App Notes': [
         { name: 'Sub-1 GHz System Design', url: 'https://www.ti.com/lit/an/swra479a/swra479a.pdf', type: 'appnote' },
         { name: 'CC1310 Range Optimization', url: 'https://www.ti.com/lit/an/swra496/swra496.pdf', type: 'appnote' },
-        { name: 'Star Network Topology Guide', url: 'https://www.ti.com/lit/an/swra615/swra615.pdf', type: 'appnote' },
+        { name: 'Star Network Topology Guide', url: 'https://www.ti.com/lit/an/swra567b/swra567b.pdf', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'Sub-1 GHz Basics', url: 'https://training.ti.com/sub-1-ghz-basics', type: 'video' },
@@ -413,7 +413,7 @@ const TRAINING_TREE = {
         { name: 'mmWave Radar Basics', url: 'https://www.ti.com/lit/an/swra553a/swra553a.pdf', type: 'appnote' },
         { name: 'People Counting with mmWave', url: 'https://www.ti.com/lit/an/swra581b/swra581b.pdf', type: 'appnote' },
         { name: 'mmWave Antenna Design', url: 'https://www.ti.com/lit/an/swra632/swra632.pdf', type: 'appnote' },
-        { name: 'Vital Signs Monitoring with mmWave', url: 'https://www.ti.com/lit/an/swra615/swra615.pdf', type: 'appnote' },
+        { name: 'Vital Signs Monitoring with mmWave', url: 'https://www.ti.com/lit/pdf/swra810', type: 'appnote' },
         { name: 'Object Detection & Tracking', url: 'https://www.ti.com/lit/an/swra588/swra588.pdf', type: 'appnote' },
       ],
       'Training Videos': [
@@ -438,7 +438,7 @@ const TRAINING_TREE = {
     'Digital Isolators': {
       'App Notes': [
         { name: 'Digital Isolator Design Guide', url: 'https://www.ti.com/lit/an/slla284b/slla284b.pdf', type: 'appnote' },
-        { name: 'Isolated Power Supply Design', url: 'https://www.ti.com/lit/an/slla316/slla316.pdf', type: 'appnote' },
+        { name: 'Isolated Power Supply Design', url: 'https://www.ti.com/lit/an/snva994a/snva994a.pdf', type: 'appnote' },
         { name: 'Reinforced Isolation Explained', url: 'https://www.ti.com/lit/an/slla375/slla375.pdf', type: 'appnote' },
       ],
       'Training Videos': [
