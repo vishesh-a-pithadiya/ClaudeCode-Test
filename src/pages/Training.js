@@ -292,6 +292,7 @@ const TRAINING_TREE = {
         { name: 'USB ESD Protection', url: 'https://www.ti.com/lit/an/slvaf82/slvaf82.pdf', type: 'appnote' },
       ],
       'Training Videos': [
+        { name: 'USB Overview', url: 'https://www.ti.com/video/series/precision-labs/ti-precision-labs-usb.html?keyMatch=USB&tisearch=universal_search&f-videos=Video,Video%20series', type: 'video' },
         { name: 'USB Type-C Overview', url: 'https://training.ti.com/usb-type-c-overview', type: 'video' },
         { name: 'USB Power Delivery', url: 'https://training.ti.com/usb-power-delivery', type: 'video' },
         { name: 'USB Hub Design', url: 'https://training.ti.com/usb-hub-design', type: 'video' },
