@@ -524,7 +524,7 @@ function Training() {
         </svg>
         Home
       </button>
-      <h1>Training & App Notes</h1>
+      <h1>Training</h1>
 
       {/* Breadcrumb */}
       <div className="training-breadcrumb">
