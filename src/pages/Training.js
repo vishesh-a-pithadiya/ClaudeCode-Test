@@ -291,6 +291,7 @@ const TRAINING_TREE = {
         { name: 'TUSB1002A Redriver Design', url: 'https://www.ti.com/lit/an/slla406/slla406.pdf', type: 'appnote' },
         { name: 'USB ESD Protection', url: 'https://www.ti.com/lit/an/slvaf82/slvaf82.pdf', type: 'appnote' },
         { name: 'USB Type-C Guide', url: 'https://www.ti.com/lit/eb/slyy228/slyy228.pdf?HQS=app-ipp-pwr-denusbc-bhp-ebook-null-de', type: 'appnote' },
+        { name: 'Implementing USB Type-C', url: 'https://www.ti.com/lit/an/sdaa101/sdaa101.pdf?ts=1774428728078', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'USB Overview', url: 'https://www.ti.com/video/series/precision-labs/ti-precision-labs-usb.html?keyMatch=USB&tisearch=universal_search&f-videos=Video,Video%20series', type: 'video' },
