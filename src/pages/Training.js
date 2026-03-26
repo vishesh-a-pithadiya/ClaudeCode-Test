@@ -290,6 +290,7 @@ const TRAINING_TREE = {
         { name: 'USB Signal Integrity Guide', url: 'https://www.ti.com/lit/an/slla414a/slla414a.pdf', type: 'appnote' },
         { name: 'TUSB1002A Redriver Design', url: 'https://www.ti.com/lit/an/slla406/slla406.pdf', type: 'appnote' },
         { name: 'USB ESD Protection', url: 'https://www.ti.com/lit/an/slvaf82/slvaf82.pdf', type: 'appnote' },
+        { name: 'USB Type-C Guide', url: 'https://www.ti.com/lit/eb/slyy228/slyy228.pdf?HQS=app-ipp-pwr-denusbc-bhp-ebook-null-de', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'USB Overview', url: 'https://www.ti.com/video/series/precision-labs/ti-precision-labs-usb.html?keyMatch=USB&tisearch=universal_search&f-videos=Video,Video%20series', type: 'video' },
