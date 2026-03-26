@@ -297,6 +297,7 @@ const TRAINING_TREE = {
         { name: 'USB Power Delivery', url: 'https://training.ti.com/usb-power-delivery', type: 'video' },
         { name: 'USB Hub Design', url: 'https://training.ti.com/usb-hub-design', type: 'video' },
         { name: 'USB Redriver vs Retimer', url: 'https://www.ti.com/video/6144123457001?keyMatch=redriver&tisearch=universal_search&f-videos=Video,Video%20series', type: 'video' },
+        { name: 'USB Redriver Solutions', url: 'https://www.ti.com/video/series/precision-labs/ti-precision-labs-usb.html?keyMatch=USB&tisearch=universal_search&f-videos=Video,Video%20series', type: 'video' },
       ],
     },
     'CAN / CAN-FD': {
