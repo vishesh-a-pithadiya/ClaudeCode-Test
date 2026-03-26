@@ -8,12 +8,12 @@ const TRAINING_TREE = {
       'App Notes': [
         { name: 'AN-2162: Simple Switcher PCB Layout', url: 'https://www.ti.com/lit/an/snva603c/snva603c.pdf', type: 'appnote' },
         { name: 'AN-1149: Layout Guidelines for Switching Regulators', url: 'https://www.ti.com/lit/an/snva021c/snva021c.pdf', type: 'appnote' },
-        { name: 'Selecting Inductors for Buck Converters', url: 'https://www.ti.com/lit/an/slva477b/slva477b.pdf', type: 'appnote' },
+        { name: 'Basic Calculation of a Buck Converter\'s Power Stage', url: 'https://www.ti.com/lit/an/slva477b/slva477b.pdf', type: 'appnote' },
         { name: 'Understanding Buck Power Stages', url: 'https://www.ti.com/lit/an/slva057/slva057.pdf', type: 'appnote' },
-        { name: 'Boost Converter Design Guide', url: 'https://www.ti.com/lit/an/slva372d/slva372d.pdf', type: 'appnote' },
-        { name: 'Buck-Boost Converter Design', url: 'https://www.ti.com/lit/an/slva535a/slva535a.pdf', type: 'appnote' },
+        { name: 'Basic Calculation of a Boost Converter\'s Power Stage', url: 'https://www.ti.com/lit/an/slva372d/slva372d.pdf', type: 'appnote' },
+        { name: 'Basic Calculation of an Inverting Power Stage', url: 'https://www.ti.com/lit/an/slva535b/slva535b.pdf', type: 'appnote' },
         { name: 'Voltage Mode vs Current Mode Control', url: 'https://www.ti.com/lit/pdf/slua119', type: 'appnote' },
-        { name: 'Thermal Design for DC/DC Converters', url: 'https://www.ti.com/lit/an/slva462/slva462.pdf', type: 'appnote' },
+        { name: 'Understanding Thermal Dissipation and Design of a Heatsink', url: 'https://www.ti.com/lit/an/slva462/slva462.pdf', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'Introduction to DC/DC Converters', url: 'https://training.ti.com/introduction-dc-dc-converters', type: 'video' },
@@ -41,11 +41,11 @@ const TRAINING_TREE = {
     'Battery Management': {
       'App Notes': [
         { name: 'Battery Charger Design Guide', url: 'https://www.ti.com/lit/an/sluaar7/sluaar7.pdf', type: 'appnote' },
-        { name: 'BQ25890 USB Charger Design', url: 'https://www.ti.com/lit/an/slua748/slua748.pdf', type: 'appnote' },
-        { name: 'Battery Fuel Gauging Basics', url: 'https://www.ti.com/lit/an/slua694a/slua694a.pdf', type: 'appnote' },
-        { name: 'Multi-Cell Battery Pack Design', url: 'https://www.ti.com/lit/an/slua751/slua751.pdf', type: 'appnote' },
-        { name: 'Battery Protection Circuit Design', url: 'https://www.ti.com/lit/an/slua769/slua769.pdf', type: 'appnote' },
-        { name: 'Wireless Charging System Design', url: 'https://www.ti.com/lit/an/slua842/slua842.pdf', type: 'appnote' },
+        { name: 'bq51003 & bq25120 Wearable Wireless Charging Reference Design', url: 'https://www.ti.com/lit/an/slua748/slua748.pdf', type: 'appnote' },
+        { name: 'Low-Power Battery Fuel Gauging Scheme', url: 'https://www.ti.com/lit/an/slua694a/slua694a.pdf', type: 'appnote' },
+        { name: 'Multi-Cell Battery Gas Gauging with bq20z70', url: 'https://www.ti.com/lit/an/slua397/slua397.pdf', type: 'appnote' },
+        { name: 'bq769x0 Boot Switch Alternatives', url: 'https://www.ti.com/lit/an/slua769/slua769.pdf', type: 'appnote' },
+        { name: 'Load Current Monitoring with TPS2549', url: 'https://www.ti.com/lit/an/slua842/slua842.pdf', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'Battery Management Overview', url: 'https://training.ti.com/battery-management-overview', type: 'video' },
@@ -56,8 +56,7 @@ const TRAINING_TREE = {
     },
     'Gate Drivers': {
       'App Notes': [
-        { name: 'Gate Driver Design Guide', url: 'https://www.ti.com/lit/an/slua618a/slua618a.pdf', type: 'appnote' },
-        { name: 'Isolated Gate Driver Basics', url: 'https://www.ti.com/lit/pdf/slua618', type: 'appnote' },
+        { name: 'Fundamentals of MOSFET and IGBT Gate Driver Circuits', url: 'https://www.ti.com/lit/an/slua618a/slua618a.pdf', type: 'appnote' },
         { name: 'Half-Bridge Gate Driver Design', url: 'https://www.ti.com/lit/an/slua887/slua887.pdf', type: 'appnote' },
         { name: 'GaN FET Gate Driver Selection', url: 'https://www.ti.com/lit/an/snoaa15/snoaa15.pdf', type: 'appnote' },
       ],
@@ -69,7 +68,7 @@ const TRAINING_TREE = {
     },
     'LED Drivers': {
       'App Notes': [
-        { name: 'LED Driver Design Basics', url: 'https://www.ti.com/lit/an/slva325/slva325.pdf', type: 'appnote' },
+        { name: 'LED-Driver Considerations', url: 'https://www.ti.com/lit/pdf/slyt084', type: 'appnote' },
         { name: 'Automotive LED Lighting Design', url: 'https://www.ti.com/lit/an/slva753/slva753.pdf', type: 'appnote' },
         { name: 'High-Power LED Thermal Management', url: 'https://www.ti.com/lit/an/slva559/slva559.pdf', type: 'appnote' },
       ],
@@ -80,10 +79,10 @@ const TRAINING_TREE = {
     },
     'AC/DC & Isolated Power': {
       'App Notes': [
-        { name: 'Flyback Converter Design', url: 'https://www.ti.com/lit/an/slua143/slua143.pdf', type: 'appnote' },
+        { name: 'UC3842/3/4/5 Low-Cost Current-Mode Control', url: 'https://www.ti.com/lit/an/slua143/slua143.pdf', type: 'appnote' },
         { name: 'LLC Resonant Converter Design', url: 'https://www.ti.com/lit/an/slua582a/slua582a.pdf', type: 'appnote' },
-        { name: 'Transformer Design for Flyback', url: 'https://www.ti.com/lit/an/slua248/slua248.pdf', type: 'appnote' },
-        { name: 'PFC Circuit Design Guide', url: 'https://www.ti.com/lit/an/slua369/slua369.pdf', type: 'appnote' },
+        { name: 'Magnetics Design: Flyback Transformer Design', url: 'https://www.ti.com/lit/ml/slup127/slup127.pdf', type: 'appnote' },
+        { name: '350-W Two-Phase Interleaved PFC Pre-Regulator Design Review', url: 'https://www.ti.com/lit/an/slua369/slua369.pdf', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'Flyback Converter Basics', url: 'https://training.ti.com/flyback-converter-basics', type: 'video' },
@@ -251,7 +250,7 @@ const TRAINING_TREE = {
       'App Notes': [
         { name: 'DRV8xx Brushed DC Motor Control', url: 'https://www.ti.com/lit/an/slva859/slva859.pdf', type: 'appnote' },
         { name: 'H-Bridge Motor Driver Design', url: 'https://www.ti.com/lit/an/slva642/slva642.pdf', type: 'appnote' },
-        { name: 'PWM Frequency Selection for DC Motors', url: 'https://www.ti.com/lit/pdf/slvafl7', type: 'appnote' },
+        { name: 'Driving BLDC Motors with PWM Generation Mode', url: 'https://www.ti.com/lit/pdf/slvafl7', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'Brushed DC Motor Driver Basics', url: 'https://training.ti.com/brushed-dc-motor-basics', type: 'video' },
@@ -286,8 +285,8 @@ const TRAINING_TREE = {
   'Interface & Connectivity': {
     'USB': {
       'App Notes': [
-        { name: 'USB Type-C and PD Overview', url: 'https://www.ti.com/lit/an/slva844/slva844.pdf', type: 'appnote' },
-        { name: 'USB Hub Controller Design', url: 'https://www.ti.com/lit/an/slla414/slla414.pdf', type: 'appnote' },
+        { name: 'PD Alternate Mode: DisplayPort', url: 'https://www.ti.com/lit/an/slva844/slva844.pdf', type: 'appnote' },
+        { name: 'High-Speed Layout Guidelines for USB Hubs and Signal Conditioners', url: 'https://www.ti.com/lit/an/slla414/slla414.pdf', type: 'appnote' },
         { name: 'USB Signal Integrity Guide', url: 'https://www.ti.com/lit/an/slla443/slla443.pdf', type: 'appnote' },
         { name: 'TUSB1002A Redriver Design', url: 'https://www.ti.com/lit/an/slla406/slla406.pdf', type: 'appnote' },
         { name: 'USB ESD Protection', url: 'https://www.ti.com/lit/an/slvaf82/slvaf82.pdf', type: 'appnote' },
@@ -336,7 +335,7 @@ const TRAINING_TREE = {
     },
     'I2C / SPI': {
       'App Notes': [
-        { name: 'I2C Bus Specification Guide', url: 'https://www.ti.com/lit/an/slva704/slva704.pdf', type: 'appnote' },
+        { name: 'Understanding the I2C Bus', url: 'https://www.ti.com/lit/an/slva704/slva704.pdf', type: 'appnote' },
         { name: 'I2C Level Shifting Techniques', url: 'https://www.ti.com/lit/an/slva689/slva689.pdf', type: 'appnote' },
         { name: 'SPI Interface Best Practices', url: 'https://www.ti.com/lit/an/slaa698/slaa698.pdf', type: 'appnote' },
       ],
