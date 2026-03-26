@@ -288,9 +288,9 @@ const TRAINING_TREE = {
       'App Notes': [
         { name: 'USB Type-C and PD Overview', url: 'https://www.ti.com/lit/an/slva844/slva844.pdf', type: 'appnote' },
         { name: 'USB Hub Controller Design', url: 'https://www.ti.com/lit/an/slla414/slla414.pdf', type: 'appnote' },
-        { name: 'USB Signal Integrity Guide', url: 'https://www.ti.com/lit/an/slla414/slla414.pdf', type: 'appnote' },
+        { name: 'USB Signal Integrity Guide', url: 'https://www.ti.com/lit/an/slla443/slla443.pdf', type: 'appnote' },
         { name: 'TUSB1002A Redriver Design', url: 'https://www.ti.com/lit/an/slla406/slla406.pdf', type: 'appnote' },
-        { name: 'USB ESD Protection', url: 'https://www.ti.com/lit/an/slva597/slva597.pdf', type: 'appnote' },
+        { name: 'USB ESD Protection', url: 'https://www.ti.com/lit/an/slvaf82/slvaf82.pdf', type: 'appnote' },
       ],
       'Training Videos': [
         { name: 'USB Type-C Overview', url: 'https://training.ti.com/usb-type-c-overview', type: 'video' },
